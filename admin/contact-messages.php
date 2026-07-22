@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Fetch current logged-in user's role to restrict access
@@ -20,6 +25,7 @@ $stmt->execute();
 $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <style>
     .contact-messages-table-wrapper {
         width: 100%;
@@ -130,6 +136,8 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -147,6 +155,7 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <div class="container ptb-100">
+<<<<<<< HEAD
     <div class="contact-messages-table-wrapper">
         <table class="table table-bordered mt-4 contact-messages-table-main">
             <thead>
@@ -185,6 +194,36 @@ $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+=======
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Submitted At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($messages as $message): ?>
+                <tr>
+                    <td><?= htmlspecialchars($message['name']) ?></td>
+                    <td><?= htmlspecialchars($message['email']) ?></td>
+                    <td><?= htmlspecialchars($message['phone']) ?></td>
+                    <td><?= htmlspecialchars($message['subject']) ?></td>
+                    <td><?= htmlspecialchars($message['message']) ?></td>
+                    <td><?= $message['submitted_at'] ?></td>
+                    <td>
+                        <a href="delete-contact-message.php?id=<?= $message['id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this message?')">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </div>
 
 <?php include 'footer.php'; ?>

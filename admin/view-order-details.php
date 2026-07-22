@@ -64,7 +64,11 @@ if (isset($_GET['order_id'])) {
             </tr>
             <tr>
                 <th>Total</th>
+<<<<<<< HEAD
                 <td>PKR <?= number_format($order['total'], 2) ?></td>
+=======
+                <td>LKR <?= number_format($order['total'], 2) ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
             </tr>
             <tr>
                 <th>Status</th>
@@ -91,16 +95,26 @@ if (isset($_GET['order_id'])) {
                     <tr>
                         <td><?= $item['product_name'] ?></td>
                         <td><?= $item['quantity'] ?></td>
+<<<<<<< HEAD
                         <td>PKR <?= number_format($item['price'], 2) ?></td>
                         <td>PKR <?= number_format($item['total'], 2) ?></td>
+=======
+                        <td>LKR <?= number_format($item['price'], 2) ?></td>
+                        <td>LKR <?= number_format($item['total'], 2) ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 
+<<<<<<< HEAD
     <button onclick="printOrder()" class="btn btn-primary ce5 mb-1">Print</button>
     <a href="download-order-pdf.php?order_id=<?= $order_id ?>" class="btn btn-primary ce5 mb-1">Download PDF</a>
+=======
+    <button onclick="printOrder()" class="btn btn-primary ce5">Print</button>
+    <a href="download-order-pdf.php?order_id=<?= $order_id ?>" class="btn btn-primary ce5">Download PDF</a>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </div>
 
 <script>

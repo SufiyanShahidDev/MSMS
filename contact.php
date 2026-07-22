@@ -30,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
+<<<<<<< HEAD
 <section class="breadcrumbs-area ptb-100 bg-gray">
+=======
+<section class="breadcrumbs-area ptb-100">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -46,7 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </section>
 
+<<<<<<< HEAD
 <div id="contact-area" class="contact-area mt-0 ptb-100 bg-img-3 bg-gray">
+=======
+<div id="contact-area" class="contact-area gray-bg ptb-100 bg-img-3 bg-gray">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     <div class="container">
         <div class="row">
             <form id="contact-form" method="post" class="col-lg-9">
@@ -84,8 +92,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="contact-textarea">
                             <textarea name="con_message" class="form-control" required placeholder="Your Message"></textarea>
                         </div>
+<<<<<<< HEAD
                         <div class="submit mt-10">
                             <button class="hs-btn hs-btn-2" type="submit">Send Message</button>
+=======
+                        <div class="submit mt-20">
+                            <input class="submit" type="submit" value="Send Message">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                         </div>
                     </div>
                 </div>
@@ -100,16 +113,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <a href="#"><i class="zmdi zmdi-pin"></i></a>
                             </div>
                             <div class="footer-address">
+<<<<<<< HEAD
                                 <p>Address: Aptech Gulshan II, Karachi, Pakistan</p>
+=======
+                                <p>Address: 123 Glamour Salon St, Colombo, Sri Lanka</p>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             </div>
                         </div>
                         <div class="ft-single-address">
                             <div class="footer-icon">
+<<<<<<< HEAD
                                 <a href="mailto:info@signaturemenssalon.com"><i class="zmdi zmdi-email"></i></a>
                             </div>
                             <div class="footer-address">
                                 <p><a href="mailto:info@signaturemenssalon.com">signaturemenssalon@dummy.com</a></p>
                                 <p><a href="mailto:support@signaturemenssalon.com">support@signaturemenssalon.com</a></p>
+=======
+                                <a href="mailto:info@glamoursalon.com"><i class="zmdi zmdi-email"></i></a>
+                            </div>
+                            <div class="footer-address">
+                                <p><a href="mailto:info@glamoursalon.com">info@glamoursalon.com</a></p>
+                                <p><a href="mailto:support@glamoursalon.com">support@glamoursalon.com</a></p>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             </div>
                         </div>
                         <div class="ft-single-address">
@@ -117,8 +142,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <a href="tel:+94123456789"><i class="zmdi zmdi-phone"></i></a>
                             </div>
                             <div class="footer-address">
+<<<<<<< HEAD
                                 <p><a href="tel:+94123456789">+94 111 777 999</a></p>
                                 <p><a href="tel:+94123456789">+94 111 555 333</a></p>
+=======
+                                <p><a href="tel:+94123456789">+94 123 456 789</a></p>
+                                <p><a href="tel:+94123456789">+94 123 456 789</a></p>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             </div>
                         </div>
                     </div>
@@ -133,7 +163,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="map-area">
     <div class="contact-map">
         <div id="hastech">
+<<<<<<< HEAD
             <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d115775.39836240988!2d67.1015786!3d24.932710399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3eb33f5ba1db4061%3A0xad2c7a2c189158d0!2sAptech%20Gulshan%202%2C%20A13%2C%20Block%2016%20Gulshan-e-Iqbal%2C%20Karachi%2C%20Pakistan!3m2!1d24.9052218!2d67.079838!5e0!3m2!1sen!2s!4v1779189583376!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+=======
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.090194470838!2d79.84746044497318!3d6.8879023393172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bdb2b0473d7%3A0x25dd59a03ad76bb4!2sColombo%2004%2C%20Colombo!5e0!3m2!1sen!2slk!4v1727728205101!5m2!1sen!2slk" allowfullscreen></iframe>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
         </div>
     </div>
 </div>

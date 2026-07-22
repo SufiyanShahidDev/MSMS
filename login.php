@@ -2,6 +2,7 @@
 include 'header.php';
 include 'dbconnect.php';
 
+<<<<<<< HEAD
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
@@ -26,11 +27,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         $message = "Error: " . $e->getMessage();
         $message_type = "danger";
+=======
+// Handle login submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    // Fetch user data based on email
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['user_id'];
+        echo "<script type='text/javascript'>
+                window.location.href = 'my-account.php';
+              </script>";;
+        exit;
+    } else {
+        $message = "Invalid login credentials.";
+        $message_type = 'danger';
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     }
 }
 ?>
 
+<<<<<<< HEAD
 <section class="breadcrumbs-area ptb-50">
+=======
+<section class="breadcrumbs-area ptb-100 bg-gray">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -43,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 </section>
 
 <section class="login-area">
@@ -50,6 +77,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="login-content card p-5">
+=======
+    </div>
+</section>
+
+<section class="login-area ptb-90">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-content">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
                     <?php if (isset($message)): ?>
                         <div class="mt-20 alert alert-<?= $message_type ?>"><?= $message ?></div>
@@ -68,7 +105,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <button type="submit" class="btn btn-primary ce5 btn-large mb-10">Login</button>
                         </div>
                         <div class="text-center">
+<<<<<<< HEAD
                             <p>Don't have an account? <a href="register.php" style="color: var(--gold);font-weight: 700;">Register here</a></p>
+=======
+                            <p>Don't have an account? <a href="register.php" style="color: #B23372;">Register here</a></p>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                         </div>
                     </form>
                 </div>
@@ -78,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </section>
 
 <style>
+<<<<<<< HEAD
     .form-control {
         padding: 12px;
         font-size: 16px;
@@ -99,6 +141,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         margin-bottom: 20px;
         border-radius: 4px;
     }
+=======
+.form-control {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    border: none;
+    padding: 12px;
+    font-size: 20px;
+    width: 100%;
+    height: 45px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </style>
 
 <?php include 'footer.php'; ?>

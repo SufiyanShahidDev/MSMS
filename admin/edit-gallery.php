@@ -177,7 +177,11 @@ $gallery = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <div class="container ptb-100">
+<<<<<<< HEAD
     <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#addGalleryModal">Add Gallery Image</button>
+=======
+    <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addGalleryModal">Add Gallery Image</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
     <table class="table table-bordered mt-4">
         <thead>
@@ -195,8 +199,13 @@ $gallery = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $image['category'] ?></td>
                     <td><img src="../<?= $image['file_path'] ?>" alt="<?= $image['title'] ?>" style="width: 80px;"></td>
                     <td>
+<<<<<<< HEAD
                         <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#editGalleryModal<?= $image['id'] ?>">Edit</button>
                         <a href="edit-gallery.php?delete=<?= $image['id'] ?>" class="btn btn-primary ce5 mb-1" onclick="return confirm('Are you sure you want to delete this image?')">Delete</a>
+=======
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editGalleryModal<?= $image['id'] ?>">Edit</button>
+                        <a href="edit-gallery.php?delete=<?= $image['id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this image?')">Delete</a>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </td>
                 </tr>
 
@@ -225,8 +234,13 @@ $gallery = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                                 <div class="modal-footer">
+<<<<<<< HEAD
                                     <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                                     <button type="submit" name="edit_gallery" class="btn btn-primary ce5 mb-1">Save changes</button>
+=======
+                                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" name="edit_gallery" class="btn btn-primary ce5">Save changes</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                 </div>
                             </form>
                         </div>
@@ -260,8 +274,13 @@ $gallery = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
                     <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                     <button type="submit" name="add_gallery" class="btn btn-primary ce5 mb-1">Add Gallery Image</button>
+=======
+                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="add_gallery" class="btn btn-primary ce5">Add Gallery Image</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                 </div>
             </form>
         </div>

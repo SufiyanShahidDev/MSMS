@@ -106,8 +106,13 @@ if (isset($_SESSION['cart'])) {
                                                 </button>
                                             </form>
                                         </td>
+<<<<<<< HEAD
                                         <td class="sop-cart">PKR <?php echo number_format((float)$product['price'], 2); ?></td>
                                         <td class="sop-cart">PKR <?php echo number_format((float)$product['price'] * (int)$product['qty'], 2); ?></td>
+=======
+                                        <td class="sop-cart">LKR <?php echo number_format((float)$product['price'], 2); ?></td>
+                                        <td class="sop-cart">LKR <?php echo number_format((float)$product['price'] * (int)$product['qty'], 2); ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                         <td class="sop-icon">
                                             <a href="cart.php?remove=<?php echo $product_id; ?>" class="remove">
                                                 <i class="zmdi zmdi-close-circle"></i>
@@ -135,7 +140,11 @@ if (isset($_SESSION['cart'])) {
                 <table class="table table-bordered mt-5 mt-lg-0">
                     <tr>
                         <td class="text-center"><strong>Sub-Total:</strong></td>
+<<<<<<< HEAD
                         <td class="text-center">PKR <?php echo number_format($cart_total, 2); ?></td>
+=======
+                        <td class="text-center">LKR <?php echo number_format($cart_total, 2); ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </tr>
                     <tr>
                         <td class="text-center"><strong>Shipping Charge:</strong></td>
@@ -143,7 +152,11 @@ if (isset($_SESSION['cart'])) {
                     </tr>
                     <tr>
                         <td class="text-center"><strong>Total:</strong></td>
+<<<<<<< HEAD
                         <td class="text-center">PKR <?php echo number_format($cart_total, 2); ?></td>
+=======
+                        <td class="text-center">LKR <?php echo number_format($cart_total, 2); ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </tr>
                 </table>
             </div>

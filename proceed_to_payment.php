@@ -45,7 +45,11 @@ if ($order['payment_method'] === 'online_payment') {
     $return_url = $_ENV['PAYHERE_RETURN_URL'];
     $cancel_url = $_ENV['PAYHERE_CANCEL_URL'];
     $notify_url = $_ENV['PAYHERE_NOTIFY_URL'];
+<<<<<<< HEAD
     $currency = 'PKR';
+=======
+    $currency = 'LKR';
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
     $hash = strtoupper(
         md5(

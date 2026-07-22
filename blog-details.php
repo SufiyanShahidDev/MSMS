@@ -87,7 +87,11 @@ $comments = $comments_stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="col-md-12">
                                     <div class="text-leave">
                                         <textarea name="content" placeholder="Comment*" required></textarea>
+<<<<<<< HEAD
                                         <button class="submit hs-btn" type="submit">Send Comment</button>
+=======
+                                        <button class="submit" type="submit">Send Comment</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                     </div>
                                 </div>
                             </div>

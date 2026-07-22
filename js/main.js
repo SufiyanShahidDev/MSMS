@@ -78,25 +78,45 @@
       $("#slider-range").slider({
           range: true,
           min: 1000,
+<<<<<<< HEAD
           max: 20000,
           values: [1000, 20000],
           slide: function(event, ui) {
               $("#amount").val("PKR " + ui.values[0].toLocaleString() + " - PKR " + ui.values[1].toLocaleString());
+=======
+          max: 50000,
+          values: [1000, 50000],
+          slide: function(event, ui) {
+              $("#amount").val("LKR " + ui.values[0].toLocaleString() + " - LKR " + ui.values[1].toLocaleString());
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
           },
           stop: function(event, ui) {
               var minPrice = ui.values[0];
               var maxPrice = ui.values[1];
+<<<<<<< HEAD
               $("#amount").val("PKR " + minPrice.toLocaleString() + " - PKR " + maxPrice.toLocaleString());
+=======
+              $("#amount").val("LKR " + minPrice.toLocaleString() + " - LKR " + maxPrice.toLocaleString());
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
               $("form#price-filter-form").submit();
           }
       });
 
+<<<<<<< HEAD
       $("#amount").val("PKR " + $("#slider-range").slider("values", 0).toLocaleString() +
           " - PKR " + $("#slider-range").slider("values", 1).toLocaleString());
 
       $("form#price-filter-form").submit(function(event) {
           event.preventDefault();  // Prevent the default form submission
           var priceRange = $("#amount").val().replace(/PKR\s|,/g, '').split('-');
+=======
+      $("#amount").val("LKR " + $("#slider-range").slider("values", 0).toLocaleString() +
+          " - LKR " + $("#slider-range").slider("values", 1).toLocaleString());
+
+      $("form#price-filter-form").submit(function(event) {
+          event.preventDefault();  // Prevent the default form submission
+          var priceRange = $("#amount").val().replace(/LKR\s|,/g, '').split('-');
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
           var minPrice = priceRange[0].trim();
           var maxPrice = priceRange[1].trim();
           var currentUrl = window.location.pathname;

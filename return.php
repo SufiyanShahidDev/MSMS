@@ -59,7 +59,11 @@ if (isset($_GET['order_id'])) {
                     </tr>
                     <tr>
                         <th>Total</th>
+<<<<<<< HEAD
                         <td>PKR <?= number_format($order['total'], 2) ?></td>
+=======
+                        <td>LKR <?= number_format($order['total'], 2) ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </tr>
                     <tr>
                         <th>Payment Method</th>
@@ -97,8 +101,13 @@ if (isset($_GET['order_id'])) {
                     <tr>
                         <th>Product Name</th>
                         <th>Quantity</th>
+<<<<<<< HEAD
                         <th>Price (PKR)</th>
                         <th>Total (PKR)</th>
+=======
+                        <th>Price (LKR)</th>
+                        <th>Total (LKR)</th>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </tr>
                 </thead>
                 <tbody>

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Fetch current logged-in user's role to restrict access
@@ -22,6 +27,7 @@ $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <style>
     .users-table-wrapper {
         width: 100%;
@@ -136,6 +142,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -160,6 +168,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <!-- Button to trigger Add User Modal -->
+<<<<<<< HEAD
     <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#addUserModal">Add User</button>
 
     <div class="users-table-wrapper">
@@ -238,6 +247,82 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+=======
+    <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addUserModal">Add User</button>
+
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?= $user['first_name'] ?></td>
+                    <td><?= $user['last_name'] ?></td>
+                    <td><?= $user['email'] ?></td>
+                    <td><?= $user['telephone'] ?></td>
+                    <td><?= ucfirst($user['role']) ?></td>
+                    <td>
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editUserModal<?= $user['user_id'] ?>">Edit</button>
+                        <a href="delete-user.php?user_id=<?= $user['user_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                    </td>
+                </tr>
+
+                <!-- Edit User Modal -->
+                <div class="modal fade" id="editUserModal<?= $user['user_id'] ?>" tabindex="-1" aria-labelledby="editUserModalLabel<?= $user['user_id'] ?>" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="post" action="edit-user.php">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editUserModalLabel<?= $user['user_id'] ?>">Edit User</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
+                                    <div class="form-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" class="form-control" name="first_name" value="<?= $user['first_name'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" class="form-control" name="last_name" value="<?= $user['last_name'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telephone">Telephone</label>
+                                        <input type="text" class="form-control" name="telephone" value="<?= $user['telephone'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">Role</label>
+                                        <select class="form-control" name="role">
+                                            <option value="user" <?= ($user['role'] == 'user') ? 'selected' : '' ?>>User</option>
+                                            <option value="admin" <?= ($user['role'] == 'admin') ? 'selected' : '' ?>>Admin</option>
+                                            <option value="staff" <?= ($user['role'] == 'staff') ? 'selected' : '' ?>>Staff</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary ce5">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
     <!-- Add User Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
@@ -279,8 +364,13 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                     <div class="modal-footer">
+<<<<<<< HEAD
                         <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="add_user" class="btn btn-primary ce5 mb-1">Add User</button>
+=======
+                        <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="add_user" class="btn btn-primary ce5">Add User</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </div>
                 </form>
             </div>

@@ -26,8 +26,13 @@ if ($user['role'] !== 'admin' && $user['role'] !== 'staff') {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>Signature Men's Salon - Admin Dashboard</title>
     <meta name="description" content="Luxury hair and beauty services at Signature Men's Salon. Manage users, services, appointments, and more.">
+=======
+    <title>Glamour Salon - Admin Dashboard</title>
+    <meta name="description" content="Luxury hair and beauty services at Glamour Salon. Manage users, services, appointments, and more.">
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
@@ -47,7 +52,11 @@ if ($user['role'] !== 'admin' && $user['role'] !== 'staff') {
                     <div class="row align-items-center">
                         <div class="col-md-3 col-lg-2 d-none d-md-block">
                             <div class="hs-logo">
+<<<<<<< HEAD
                                 <a href="index.php"><img src="../images/logo/logo.png" alt="hair salon logo"></a>
+=======
+                                <a href="index.php"><img src="../images/logo/hair-salon.png" alt="hair salon logo"></a>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             </div>
                         </div>
                         <div class="col-md-9 col-lg-10">
@@ -80,7 +89,11 @@ if ($user['role'] !== 'admin' && $user['role'] !== 'staff') {
 
             <div class="mobile-menu-area d-block d-md-none">
                 <div class="fluid-container mobile-menu-container">
+<<<<<<< HEAD
                     <div class="mobile-logo"><a href="index.php"><img src="../images/logo/logo.png" alt="Mobile logo"></a></div>
+=======
+                    <div class="mobile-logo"><a href="index.php"><img src="../images/logo/hair-salon.png" alt="Mobile logo"></a></div>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     <div class="mobile-menu clearfix">
                         <nav id="mobile_dropdown">
                             <ul>

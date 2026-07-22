@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Restrict access for non-admin users
@@ -19,6 +24,7 @@ $stmt_blog->execute();
 $blogs = $stmt_blog->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <style>
     .comments-table-wrapper {
         width: 100%;
@@ -129,6 +135,8 @@ $blogs = $stmt_blog->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -151,11 +159,16 @@ $blogs = $stmt_blog->fetchAll(PDO::FETCH_ASSOC);
         <select id="blogSelector" class="form-control">
             <option value="">-- Select Blog Post --</option>
             <?php foreach ($blogs as $blog): ?>
+<<<<<<< HEAD
                 <option value="<?= $blog['id'] ?>"><?= htmlspecialchars($blog['title']) ?></option>
+=======
+                <option value="<?= $blog['id'] ?>"><?= $blog['title'] ?></option>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
             <?php endforeach; ?>
         </select>
     </div>
 
+<<<<<<< HEAD
     <div class="comments-table-wrapper mt-4">
         <table class="table table-bordered comments-table-main" id="commentsTable">
             <thead>
@@ -219,6 +232,67 @@ $blogs = $stmt_blog->fetchAll(PDO::FETCH_ASSOC);
             tableBody.innerHTML = '<tr><td colspan="6" class="text-center" data-label="Message">Select a blog post to load comments.</td></tr>';
         }
     });
+=======
+    <table class="table table-bordered mt-4" id="commentsTable">
+        <thead>
+            <tr>
+                <th>Blog Title</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Comment</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6" class="text-center">Select a blog post to load comments.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+document.getElementById('blogSelector').addEventListener('change', function () {
+    var blogId = this.value;
+
+    var tableBody = document.querySelector('#commentsTable tbody');
+    tableBody.innerHTML = '<tr><td colspan="6" class="text-center">Loading comments...</td></tr>';
+
+    if (blogId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'get-comments.php?blog_id=' + blogId, true);
+        xhr.onload = function () {
+            if (this.status === 200) {
+                var response = JSON.parse(this.responseText);
+                if (response.success) {
+                    tableBody.innerHTML = '';
+                    response.comments.forEach(function (comment) {
+                        var row = `
+                            <tr>
+                                <td>${comment.title}</td>
+                                <td>${comment.author}</td>
+                                <td>${comment.email}</td>
+                                <td>${comment.content}</td>
+                                <td>${comment.created_at}</td>
+                                <td>
+                                    <a href="delete-comment.php?id=${comment.id}" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this comment?')">Delete</a>
+                                </td>
+                            </tr>
+                        `;
+                        tableBody.innerHTML += row;
+                    });
+                } else {
+                    tableBody.innerHTML = '<tr><td colspan="6" class="text-center">No comments found for this blog post.</td></tr>';
+                }
+            }
+        };
+        xhr.send();
+    } else {
+        tableBody.innerHTML = '<tr><td colspan="6" class="text-center">Select a blog post to load comments.</td></tr>';
+    }
+});
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </script>
 
 <?php include 'footer.php'; ?>

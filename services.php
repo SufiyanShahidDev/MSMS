@@ -3,8 +3,12 @@ include 'header.php';
 include 'dbconnect.php';
 
 // Function to sanitize the category name for filtering
+<<<<<<< HEAD
 function sanitize_category($category)
 {
+=======
+function sanitize_category($category) {
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     return strtolower(preg_replace('/[^a-zA-Z0-9]/', '-', $category));
 }
 
@@ -19,6 +23,7 @@ $stmt_services->execute();
 $services = $stmt_services->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <style>
     .services-filter-area {
         padding-left: 15px;
@@ -139,6 +144,8 @@ $services = $stmt_services->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100">
     <div class="container">
         <div class="row">
@@ -164,9 +171,13 @@ $services = $stmt_services->fetchAll(PDO::FETCH_ASSOC);
                 <ul id="service-filters" class="port-filter-nav">
                     <li data-filter="*" class="is-checked">All</li>
                     <?php foreach ($categories as $category): ?>
+<<<<<<< HEAD
                         <li data-filter=".<?= sanitize_category($category['category']) ?>">
                             <?= htmlspecialchars(ucfirst($category['category'])) ?>
                         </li>
+=======
+                        <li data-filter=".<?= sanitize_category($category['category']) ?>"><?= ucfirst($category['category']) ?></li>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -180,11 +191,19 @@ $services = $stmt_services->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($services as $service): ?>
                 <div class="col-lg-4 col-md-6 mb-6 pro-item <?= sanitize_category($service['category']) ?>">
                     <div class="single-service-area">
+<<<<<<< HEAD
                         <h4 class="ser-vice-tit"><?= htmlspecialchars($service['name']) ?></h4>
                         <p class="ser-pra"><?= htmlspecialchars($service['description']) ?></p>
                         <p class="service-price">
                             <strong> Standard Price: PKR <?= number_format((float)$service['price'], 2) ?></strong><br>
                            <strong> Member Price: PKR <?= number_format((float)$service['member_price'], 2) ?></strong>
+=======
+                        <h4 class="ser-vice-tit"><?= $service['name'] ?></h4>
+                        <p class="ser-pra"><?= $service['description'] ?></p>
+                        <p class="service-price">
+                            Standard Price: LKR <?= number_format($service['price'], 2) ?><br>
+                            Member Price: LKR <?= number_format($service['member_price'], 2) ?>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                         </p>
                     </div>
                 </div>

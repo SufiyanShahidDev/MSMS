@@ -2,6 +2,7 @@
 	Footer Default
 ------------------------------*/
 .ft-bg-1{
+<<<<<<< HEAD
 	background: var(--bg-footer);
 }
 .ft-bg-2{
@@ -13,6 +14,19 @@
 
 .footer-pra {
     color: var(--text-white);
+=======
+	background: #121212;
+}
+.ft-bg-2{
+	background: #121212;
+}
+.footer-pra {
+  color: #fff;
+}
+
+.footer-pra {
+    color: #fff;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 }
 .footer-logo {
     margin-bottom: 14px;
@@ -22,8 +36,12 @@
     margin-top: 44px;
 }
 .social-icon li a{
+<<<<<<< HEAD
     background: var(--gold);
     color: var(--text-white);
+=======
+    border: 1px solid #a4a4a4;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     border-radius: 100%;
     display: block;
     height: 30px;
@@ -36,6 +54,7 @@
     margin-left: 14px;
 }
 .social-icon li a:hover{
+<<<<<<< HEAD
     background: var(--gold-dark) none repeat scroll 0 0;
 }
 .social-icon li a:hover i {
@@ -44,11 +63,27 @@
 
 .footer-title {
     color: var(--text-white);
+=======
+    background: #B23372 none repeat scroll 0 0;
+    border: 1px solid #B23372;
+    color: #fff;
+}
+.social-icon li a:hover i {
+    color: #fff;
+}
+
+.footer-title {
+    color: #fff;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     font-size: 18px;
     text-transform: uppercase;
 }
 .hs-footer-date li {
+<<<<<<< HEAD
     color: var(--text-white);
+=======
+    color: #fff;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     font-size: 14px;
     line-height: 24px;
 }
@@ -60,11 +95,18 @@
     color: #fff;
     display: flex;
 }
+<<<<<<< HEAD
 
 .footer-icon a{
     background: var(--gold);
     color: var(--text-white);
     border-radius: 50%;
+=======
+.footer-icon a{
+    border: 1px solid #f6f6f6;
+    border-radius: 50%;
+    color: #B23372;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
     height: 30px;
     line-height: 28px;
     margin-right: 14px;
@@ -73,12 +115,15 @@
     width: 30px;
     display: block;
 }
+<<<<<<< HEAD
 
 .footer-icon a:hover {
     background: var(--gold-dark);
     color: var(--text-white) !important;
 }
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .footer-address p {
     color: #fff;
 }
@@ -116,7 +161,11 @@
   display: block;
 }
 .our-colection li a::before {
+<<<<<<< HEAD
   background: var(--gold) none repeat scroll 0 0;
+=======
+  background: #B23372 none repeat scroll 0 0;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
   content: "";
   height: 100%;
   left: 0;

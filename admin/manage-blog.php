@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Restrict access for non-admin users
@@ -20,6 +25,7 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
+<<<<<<< HEAD
 <style>
     .blogs-table-wrapper {
         width: 100%;
@@ -146,6 +152,8 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -163,6 +171,7 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <div class="container ptb-100">
+<<<<<<< HEAD
     <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#addBlogModal">Add Blog Post</button>
 
     <div class="blogs-table-wrapper">
@@ -239,6 +248,78 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+=======
+    <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addBlogModal">Add Blog Post</button>
+
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Tags</th>
+                <th>Post Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($blogs as $blog): ?>
+                <tr>
+                    <td><img src="../<?= $blog['image'] ?>" alt="Blog Image" style="width:100px;height:60px;"></td>
+                    <td><?= $blog['title'] ?></td>
+                    <td><?= $blog['category'] ?></td>
+                    <td><?= $blog['tags'] ?></td>
+                    <td><?= date('F d, Y', strtotime($blog['post_date'])) ?></td>
+                    <td>
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editBlogModal<?= $blog['id'] ?>">Edit</button>
+                        <a href="delete-blog.php?id=<?= $blog['id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this blog post?')">Delete</a>
+                    </td>
+                </tr>
+
+                <div class="modal fade" id="editBlogModal<?= $blog['id'] ?>" tabindex="-1" aria-labelledby="editBlogModalLabel<?= $blog['id'] ?>" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="post" action="edit-blog.php" enctype="multipart/form-data">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editBlogModalLabel<?= $blog['id'] ?>">Edit Blog Post</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" name="id" value="<?= $blog['id'] ?>">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" name="title" value="<?= $blog['title'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category">Category</label>
+                                        <input type="text" class="form-control" name="category" value="<?= $blog['category'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tags">Tags</label>
+                                        <input type="text" class="form-control" name="tags" value="<?= $blog['tags'] ?>" placeholder="Comma-separated tags">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content">Content</label>
+                                        <textarea class="form-control" name="content" required><?= $blog['content'] ?></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image">Image</label>
+                                        <input type="file" class="form-control" name="image">
+                                        <img src="../<?= $blog['image'] ?>" alt="Current Blog Image" style="width:100px;height:60px;margin-top:10px;">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary ce5">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </div>
 
 <div class="modal fade" id="addBlogModal" tabindex="-1" aria-labelledby="addBlogModalLabel" aria-hidden="true">
@@ -272,8 +353,13 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
                     <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                     <button type="submit" name="add_blog" class="btn btn-primary ce5 mb-1">Add Blog Post</button>
+=======
+                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="add_blog" class="btn btn-primary ce5">Add Blog Post</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                 </div>
             </form>
         </div>

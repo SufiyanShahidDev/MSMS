@@ -1,6 +1,7 @@
 /*----------------------------------------
   Menu basic style
 ------------------------------------------*/
+<<<<<<< HEAD
 
 .hs-header {
   background-color: var(--bg-primary);
@@ -12,13 +13,23 @@
   position: relative;
 }
 
+=======
+.header-area{
+  z-index: 10;
+  position: relative;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu {
   display: flex;
   justify-content: flex-end;
 }
+<<<<<<< HEAD
 
 .main-menu>li>a {
   color: var(--text-white);
+=======
+.main-menu > li > a {
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
   display: block;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -27,6 +38,7 @@
   line-height: 104px;
   text-transform: uppercase;
 }
+<<<<<<< HEAD
 
 .main-menu>li:hover>a {
   color: #c9a227;
@@ -36,19 +48,33 @@
   margin-left: 36px;
 }
 
+=======
+.main-menu > li:hover > a{
+  color: #c9a227;
+}
+.main-menu li + li {
+    margin-left: 36px;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .hs-logo {
   height: 160px;
   line-height: 160px;
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 /*-----------------------------------------
         Sticky  For  Header
 -------------------------------------------*/
 .ml-header-top.header-one.scroll-header {
   background: rgba(255, 255, 255, 1) none repeat scroll 0 0 !important;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .header-style-4 .ml-header-top.scroll-header {
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
   background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
@@ -60,11 +86,17 @@
   top: 0;
   z-index: 999;
 }
+<<<<<<< HEAD
 
 .fluid-container.mobile-menu-container {
   position: relative;
 }
 
+=======
+.fluid-container.mobile-menu-container {
+  position: relative;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .mobile-logo {
   align-items: center;
   display: flex;
@@ -75,11 +107,17 @@
   top: 0;
   z-index: 2147483647;
 }
+<<<<<<< HEAD
 
 .mobile-logo img {
   max-height: 25px;
 }
 
+=======
+.mobile-logo img {
+  max-height: 25px;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .ml-header-top.scroll-header {
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
   background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
@@ -91,13 +129,20 @@
   top: 0;
   z-index: 999;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .head-style-1.transparent-header .scroll-header .header-content {
   border-bottom: 0px solid transparent;
   margin: 0;
 }
+<<<<<<< HEAD
 
 .head-style-1.transparent-header .scroll-header .header-content .main-menu>li>a::before {
+=======
+.head-style-1.transparent-header .scroll-header .header-content .main-menu > li > a::before {
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
   position: inherit;
 }
 
@@ -105,10 +150,16 @@
 /*-------------------------------------------------------------
   Dropdown Menu
 ----------------------------------------------------*/
+<<<<<<< HEAD
 .main-menu li.drop {
   position: relative;
 }
 
+=======
+.main-menu li.drop{
+    position: relative;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu li.drop ul.dropdown {
   background: #ffffff none repeat scroll 0 0;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -123,6 +174,7 @@
   z-index: 999;
   top: 120%
 }
+<<<<<<< HEAD
 
 .scroll-header .main-menu li.drop ul.dropdown {
   top: 120% !important;
@@ -141,6 +193,22 @@
 .main-menu ul.dropdown li {
   border-bottom: 1px solid #f4f4f4;
   display: block;
+=======
+.scroll-header .main-menu li.drop ul.dropdown {
+  top: 120% !important;
+}
+.scroll-header .main-menu li.drop:hover ul.dropdown {
+  top: 100% !important;
+}
+.main-menu li.drop:hover ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+.main-menu ul.dropdown li {
+    border-bottom: 1px solid #f4f4f4;
+    display: block;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 }
 
 .main-menu ul.dropdown li a {
@@ -156,11 +224,18 @@
   transition: all 0.3s ease 0s;
 }
 
+<<<<<<< HEAD
 .main-menu li.drop ul.dropdown li:hover>a {
   background: #fafafa none repeat scroll 0 0;
   color: #141414;
 }
 
+=======
+.main-menu li.drop ul.dropdown li:hover > a {
+    background: #fafafa none repeat scroll 0 0;
+    color: #141414;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 /*------------------------------------
         Sub Menu
 ------------------------------------*/
@@ -174,24 +249,34 @@
   top: 12px;
   transition: all 0.2s ease-in-out 0s;
 }
+<<<<<<< HEAD
 
 .main-menu li.drop ul.dropdown li.drop {
   position: relative;
 }
 
+=======
+.main-menu li.drop ul.dropdown li.drop{
+  position: relative;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu li.drop ul.dropdown li.drop ul.dropdown.smright {
   border: medium none;
   right: 100%;
   top: 0;
   transition: all 0.3s ease 0s;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu li.drop ul.dropdown li.drop ul.dropdown.level2 {
   border: medium none;
   left: 100%;
   top: 20%;
   transition: all 0.3s ease 0s;
 }
+<<<<<<< HEAD
 
 .main-menu li.drop ul.dropdown li.drop ul.dropdown.level2 {
   opacity: 0;
@@ -209,6 +294,21 @@
   visibility: hidden;
 }
 
+=======
+.main-menu li.drop ul.dropdown li.drop ul.dropdown.level2 {
+    opacity: 0;
+    visibility: hidden;
+}
+.main-menu li.drop ul.dropdown li.drop:hover ul.dropdown.level2 {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+.main-menu li.drop ul.dropdown li.drop ul.dropdown.smright {
+    opacity: 0;
+    visibility: hidden;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu li.drop ul.dropdown li.drop ul.dropdown.smright {
   background: #ffffff none repeat scroll 0 0;
   left: -100%;
@@ -222,24 +322,37 @@
   width: 220px;
   z-index: 999;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .main-menu li.drop ul.dropdown li.drop:hover ul.dropdown.smright {
   left: -100%;
   opacity: 1;
   visibility: visible;
   top: 0;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .theme-color .cd-words-wrapper {
   padding: 0px !important;
 }
 
 .main-menu li ul li {
+<<<<<<< HEAD
   margin: 0;
 }
 
 .main-menu li ul li:first-child {
   margin: 0;
+=======
+    margin: 0;
+}
+.main-menu li ul li:first-child {
+    margin: 0;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 }
 
 /*----------------------
@@ -248,6 +361,7 @@
 .hs-header-top {
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
   border-bottom: 2px solid var(--gold);
 }
 
@@ -288,6 +402,38 @@
 .header-top-left p span {
   color: var(--text-white);
   margin-left: 16px;
+=======
+  border-bottom: 1px solid #333;
+}
+
+.hs-social-icon {
+    display: flex;
+}
+.hs-social-icon li a {
+    font-size: 18px;
+    height: 56px;
+    line-height: 56px;
+    transition: all 0.3s ease 0s;
+}
+.hs-social-icon li + li {
+    margin-left: 30px;
+}
+.hs-social-icon li a:hover i {
+}
+.hs-social-icon li a:hover i {
+    color: #c9a227;
+}
+.header-top-left p {
+    color: #c9a227;
+    font-family: Open Sans;
+    font-size: 13px;
+    height: 56px;
+    line-height: 56px;
+}
+.header-top-left p span {
+    color: #fff;
+    margin-left: 16px;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 }
 
 /*----------------------
@@ -304,7 +450,11 @@ header.hs-header {
 
 .header-wrap.scroll-header {
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+<<<<<<< HEAD
   background: var(--gold-dark);
+=======
+  background: #B23372;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
   box-shadow: 0 1px 3px rgba(50, 50, 50, 0.4);
   left: 0;
   margin: 0 auto;
@@ -313,25 +463,37 @@ header.hs-header {
   top: 0;
   z-index: 999;
 }
+<<<<<<< HEAD
 
 .header-wrap.scroll-header .hs-header-top {
   display: none;
 }
 
+=======
+.header-wrap.scroll-header .hs-header-top{
+  display: none;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 .header-wrap.scroll-header .hs-logo {
   height: 70px;
   line-height: 70px;
 }
+<<<<<<< HEAD
 
 .header-wrap.scroll-header .main-menu>li:hover>a {
   color: var(--text-white) !important;
   text-shadow: 0 0 1px var(--text-white);
   transform: translateY(-0.5px);
+=======
+.header-wrap.scroll-header .main-menu > li:hover > a {
+  color: #131313 !important;
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 }
 
 .header-wrap.scroll-header .hs-logo a img {
   max-height: 50px;
 }
+<<<<<<< HEAD
 
 .header-wrap.scroll-header .main-menu>li>a {
   height: 70px;
@@ -340,3 +502,9 @@ header.hs-header {
   transition: 0.3s;
   font-weight: 800;
 }
+=======
+.header-wrap.scroll-header .main-menu > li > a {
+  height: 70px;
+  line-height: 70px;
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5

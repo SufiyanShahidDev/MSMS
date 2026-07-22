@@ -113,7 +113,11 @@ if (isset($_GET['remove'])) {
                                                 <?= $item['product_name'] ?>
                                             </a>
                                         </td>
+<<<<<<< HEAD
                                         <td class="sop-cart">PKR <?= number_format($item['price'], 2) ?></td>
+=======
+                                        <td class="sop-cart">LKR <?= number_format($item['price'], 2) ?></td>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                         <td class="sop-cart">
                                             <?php if ($item['stock_status'] == 'in_stock'): ?>
                                                 <span class="label label-success">In Stock</span>

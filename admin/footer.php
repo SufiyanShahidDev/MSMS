@@ -6,7 +6,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="footer-btm-inner text-center">
+<<<<<<< HEAD
                                 <p>© 2026 <span class="text-capitalize">Signature Men's Salon</span> all rights reserved.</p>
+=======
+                                <p>© 2024 <span class="text-capitalize">Glamour Salon</span> all rights reserved.</p>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             </div>
                         </div>
                     </div>

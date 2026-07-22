@@ -149,9 +149,15 @@ include 'dbconnect.php';
                                                     </div>
                                                 </div>
                                                 <div class="hs-shop-details">
+<<<<<<< HEAD
                                                     <h4 class="shop-title"><a class="product-name" href="#"><?php echo $product['product_name']; ?></a></h4>
                                                     <ul class="product-price">
                                                         <li class="new-price">PKR <?php echo number_format($product['price'], 2); ?></li>
+=======
+                                                    <h4 class="shop-title"><a href="#"><?php echo $product['product_name']; ?></a></h4>
+                                                    <ul class="product-price">
+                                                        <li class="new-price">LKR <?php echo number_format($product['price'], 2); ?></li>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                                         <?php if ($is_out_of_stock): ?>
                                                             <li style="color: red;">Out of Stock</li>
                                                         <?php endif; ?>
@@ -206,7 +212,11 @@ include 'dbconnect.php';
                                                     <h4 class="shop-title"><a href="#"><?php echo $product['product_name']; ?></a></h4>
                                                     <p><?php echo $product['description']; ?></p>
                                                     <ul class="product-price">
+<<<<<<< HEAD
                                                         <li class="new-price">PKR <?php echo number_format($product['price'], 2); ?></li>
+=======
+                                                        <li class="new-price">LKR <?php echo number_format($product['price'], 2); ?></li>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                                         <?php if ($is_out_of_stock): ?>
                                                             <li style="color: red;">Out of Stock</li>
                                                         <?php endif; ?>

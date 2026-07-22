@@ -156,7 +156,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     <a class="btn btn-default ce5" href="#">Back</a>
                                                 </div>
                                                 <div class="pull-right">
+<<<<<<< HEAD
                                                     <button class="btn btn-primary ce5 mb-1" type="submit" name="update_info">Continue</button>
+=======
+                                                    <button class="btn btn-primary ce5" type="submit" name="update_info">Continue</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                                 </div>
                                             </div>
                                         </form>
@@ -197,7 +201,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     <a class="btn btn-default ce5" href="#">Back</a>
                                                 </div>
                                                 <div class="pull-right">
+<<<<<<< HEAD
                                                     <button class="btn btn-primary ce5 mb-1" type="submit" name="change_password">Continue</button>
+=======
+                                                    <button class="btn btn-primary ce5" type="submit" name="change_password">Continue</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                                 </div>
                                             </div>
                                         </form>
@@ -248,7 +256,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                 <a class="btn btn-default ce5" href="#">Back</a>
                                             </div>
                                             <div class="pull-right">
+<<<<<<< HEAD
                                                 <button class="btn btn-primary ce5 mb-1" type="submit" name="update_address">Update Address</button>
+=======
+                                                <button class="btn btn-primary ce5" type="submit" name="update_address">Update Address</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                                             </div>
                                         </div>
                                     </form>

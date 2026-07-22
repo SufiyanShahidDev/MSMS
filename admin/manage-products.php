@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Fetch current logged-in user's role to restrict access
@@ -22,6 +27,7 @@ $stmt->execute();
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<<<<<<< HEAD
 <style>
     .products-table-wrapper {
         width: 100%;
@@ -149,6 +155,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -173,6 +181,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <!-- Button to trigger Add Product Modal -->
+<<<<<<< HEAD
     <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
 
     <div class="products-table-wrapper">
@@ -266,6 +275,97 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+=======
+    <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
+
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($products as $product): ?>
+                <tr>
+                    <td>
+                        <?php if (!empty($product['image_url'])): ?>
+                            <img src="../<?= $product['image_url'] ?>" alt="<?= $product['product_name'] ?>" class="img-thumbnail" width="100">
+                        <?php else: ?>
+                            No Image
+                        <?php endif; ?>
+                    </td>
+                    <td><?= $product['product_name'] ?></td>
+                    <td><?= $product['description'] ?></td>
+                    <td><?= $product['category'] ?></td>
+                    <td><?= $product['price'] ?></td>
+                    <td><?= ucfirst($product['stock_status']) ?></td>
+                    <td>
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editProductModal<?= $product['product_id'] ?>">Edit</button>
+                        <a href="delete-product.php?product_id=<?= $product['product_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+                    </td>
+                </tr>
+
+                <!-- Edit Product Modal -->
+                <div class="modal fade" id="editProductModal<?= $product['product_id'] ?>" tabindex="-1" aria-labelledby="editProductModalLabel<?= $product['product_id'] ?>" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form method="post" action="edit-product.php" enctype="multipart/form-data">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editProductModalLabel<?= $product['product_id'] ?>">Edit Product</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
+                                    <div class="form-group">
+                                        <label for="product_name">Product Name</label>
+                                        <input type="text" class="form-control" name="product_name" value="<?= $product['product_name'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" name="description"><?= $product['description'] ?></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category">Category</label>
+                                        <input type="text" class="form-control" name="category" value="<?= $product['category'] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" class="form-control" name="price" value="<?= $product['price'] ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stock_status">Stock Status</label>
+                                        <select class="form-control" name="stock_status">
+                                            <option value="in_stock" <?= ($product['stock_status'] == 'in_stock') ? 'selected' : '' ?>>In Stock</option>
+                                            <option value="out_of_stock" <?= ($product['stock_status'] == 'out_of_stock') ? 'selected' : '' ?>>Out of Stock</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image">Product Image</label>
+                                        <input type="file" class="form-control" name="image">
+                                        <?php if (!empty($product['image_url'])): ?>
+                                            <img src="../<?= $product['image_url'] ?>" class="img-thumbnail mt-2" width="100">
+                                            <input type="hidden" name="current_image_url" value="<?= $product['image_url'] ?>">
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary ce5">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
     <!-- Add Product Modal -->
     <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
@@ -306,8 +406,13 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                     <div class="modal-footer">
+<<<<<<< HEAD
                         <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                         <button type="submit" name="add_product" class="btn btn-primary ce5 mb-1">Add Product</button>
+=======
+                        <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="add_product" class="btn btn-primary ce5">Add Product</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                     </div>
                 </form>
             </div>
@@ -316,4 +421,8 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </div>
 
+<<<<<<< HEAD
 <?php include 'footer.php'; ?>
+=======
+<?php include 'footer.php'; ?>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5

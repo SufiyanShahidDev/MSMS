@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <?php
 include 'header.php';
+=======
+<?php 
+include 'header.php'; 
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 include '../dbconnect.php';
 
 // Fetch current logged-in user's role to restrict access
@@ -47,6 +52,10 @@ if ($is_staff) {
     ");
     $stmt_all->execute(['staff_id' => $user_id]);
     $appointments = $stmt_all->fetchAll(PDO::FETCH_ASSOC);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 } else {
     // Fetch all today's appointments if logged in as admin
     $stmt_today = $pdo->prepare("
@@ -76,6 +85,7 @@ if ($is_staff) {
     $appointments = $stmt_all->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
+<<<<<<< HEAD
 
 <style>
     .appointments-table-wrapper {
@@ -199,6 +209,8 @@ if ($is_staff) {
     }
 </style>
 
+=======
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 <section class="breadcrumbs-area ptb-100 bg-gray">
     <div class="container">
         <div class="row">
@@ -222,6 +234,7 @@ if ($is_staff) {
     <?php endif; ?>
 
     <?php if (!$is_staff): ?>
+<<<<<<< HEAD
         <button class="btn btn-primary ce5 mb-1" data-bs-toggle="modal" data-bs-target="#addAppointmentModal">Add Appointment</button>
     <?php endif; ?>
 
@@ -379,6 +392,145 @@ if ($is_staff) {
             </tbody>
         </table>
     </div>
+=======
+        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addAppointmentModal">Add Appointment</button>
+    <?php endif; ?>
+
+    <h3 class="mt-5">Today's Appointments</h3>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Service</th>
+                <?php if (!$is_staff): ?>
+                    <th>Staff</th>
+                <?php endif; ?>
+                <th>Appointment Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($todays_appointments)): ?>
+                <?php foreach ($todays_appointments as $appointment): ?>
+                    <tr>
+                        <td><?= $appointment['user_full_name'] ?></td>
+                        <td><?= $appointment['service_name'] ?></td>
+                        <?php if (!$is_staff): ?>
+                            <td>
+                                <?= !empty($appointment['staff_full_name']) ? $appointment['staff_full_name'] : 'Not Assigned' ?>
+                            </td>
+                        <?php endif; ?>
+                        <td><?= date('d/m/Y', strtotime($appointment['appointment_date'])) ?> <?= date('h:i A', strtotime($appointment['appointment_time'])) ?></td>
+                        <td>
+                            <select class="form-control" name="status" onchange="updateStatus(this, <?= $appointment['appointment_id'] ?>)">
+                                <option value="Accepted" <?= $appointment['status'] == 'Accepted' ? 'selected' : '' ?>>Accepted</option>
+                                <option value="In Progress" <?= $appointment['status'] == 'In Progress' ? 'selected' : '' ?>>In Progress</option>
+                                <option value="Completed" <?= $appointment['status'] == 'Completed' ? 'selected' : '' ?>>Completed</option>
+                                <option value="Cancelled" <?= $appointment['status'] == 'Cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editAppointmentModal<?= $appointment['appointment_id'] ?>">Edit</button>
+                            <a href="delete-appointment.php?appointment_id=<?= $appointment['appointment_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this appointment?')">Delete</a>
+                        </td>
+                    </tr>
+
+                    <div class="modal fade" id="editAppointmentModal<?= $appointment['appointment_id'] ?>" tabindex="-1" aria-labelledby="editAppointmentModalLabel<?= $appointment['appointment_id'] ?>" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form method="post" action="edit-appointment.php">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editAppointmentModalLabel<?= $appointment['appointment_id'] ?>">Edit Appointment</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="hidden" name="appointment_id" value="<?= $appointment['appointment_id'] ?>">
+                                        <div class="form-group">
+                                            <label for="appointment_date">Appointment Date</label>
+                                            <input type="date" class="form-control" name="appointment_date" value="<?= $appointment['appointment_date'] ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="appointment_time">Appointment Time</label>
+                                            <input type="time" class="form-control" name="appointment_time" value="<?= $appointment['appointment_time'] ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="service_id">Service</label>
+                                            <select class="form-control" name="service_id" required>
+                                                <?php 
+                                                $stmt_services = $pdo->query("SELECT * FROM services");
+                                                while ($service = $stmt_services->fetch(PDO::FETCH_ASSOC)): ?>
+                                                    <option value="<?= $service['service_id'] ?>" <?= ($service['service_id'] == $appointment['service_id']) ? 'selected' : '' ?>><?= $service['name'] ?></option>
+                                                <?php endwhile; ?>
+                                            </select>
+                                        </div>
+                                        <?php if (!$is_staff): ?>
+                                            <div class="form-group">
+                                                <label for="staff_id">Staff</label>
+                                                <select class="form-control" name="staff_id">
+                                                    <option value="">Not Assigned</option>
+                                                    <?php 
+                                                    $stmt_staff = $pdo->query("SELECT * FROM users WHERE role = 'staff'");
+                                                    while ($staff = $stmt_staff->fetch(PDO::FETCH_ASSOC)): ?>
+                                                        <option value="<?= $staff['user_id'] ?>" <?= ($staff['user_id'] == $appointment['staff_id']) ? 'selected' : '' ?>><?= $staff['first_name'] . ' ' . $staff['last_name'] ?></option>
+                                                    <?php endwhile; ?>
+                                                </select>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary ce5">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr><td colspan="6">No appointments for today.</td></tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+    <h3 class="mt-5">All Appointments</h3>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Service</th>
+                <th>Staff</th>
+                <th>Appointment Date & Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($appointments as $appointment): ?>
+                <tr>
+                    <td><?= $appointment['user_full_name'] ?></td>
+                    <td><?= $appointment['service_name'] ?></td>
+                    <td>
+                        <?= !empty($appointment['staff_full_name']) ? $appointment['staff_full_name'] : 'Not Assigned' ?>
+                    </td>
+                    <td><?= date('d/m/Y', strtotime($appointment['appointment_date'])) ?> <?= date('h:i A', strtotime($appointment['appointment_time'])) ?></td>
+                    <td>
+                        <select class="form-control" name="status" onchange="updateStatus(this, <?= $appointment['appointment_id'] ?>)">
+                            <option value="Accepted" <?= $appointment['status'] == 'Accepted' ? 'selected' : '' ?>>Accepted</option>
+                            <option value="In Progress" <?= $appointment['status'] == 'In Progress' ? 'selected' : '' ?>>In Progress</option>
+                            <option value="Completed" <?= $appointment['status'] == 'Completed' ? 'selected' : '' ?>>Completed</option>
+                            <option value="Cancelled" <?= $appointment['status'] == 'Cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editAppointmentModal<?= $appointment['appointment_id'] ?>">Edit</button>
+                        <a href="delete-appointment.php?appointment_id=<?= $appointment['appointment_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this appointment?')">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 
 </div>
 
@@ -394,20 +546,34 @@ if ($is_staff) {
                     <div class="form-group">
                         <label for="user_id">User</label>
                         <select class="form-control" name="user_id" required>
+<<<<<<< HEAD
                             <?php
                             $stmt_users = $pdo->query("SELECT * FROM users WHERE role = 'user'");
                             while ($user = $stmt_users->fetch(PDO::FETCH_ASSOC)): ?>
                                 <option value="<?= $user['user_id'] ?>"><?= htmlspecialchars($user['first_name'] . ' ' . $user['last_name']) ?></option>
+=======
+                            <?php 
+                            $stmt_users = $pdo->query("SELECT * FROM users WHERE role = 'user'");
+                            while ($user = $stmt_users->fetch(PDO::FETCH_ASSOC)): ?>
+                                <option value="<?= $user['user_id'] ?>"><?= $user['first_name'] . ' ' . $user['last_name'] ?></option>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             <?php endwhile; ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="service_id">Service</label>
                         <select class="form-control" name="service_id" required>
+<<<<<<< HEAD
                             <?php
                             $stmt_services = $pdo->query("SELECT * FROM services");
                             while ($service = $stmt_services->fetch(PDO::FETCH_ASSOC)): ?>
                                 <option value="<?= $service['service_id'] ?>"><?= htmlspecialchars($service['name']) ?></option>
+=======
+                            <?php 
+                            $stmt_services = $pdo->query("SELECT * FROM services");
+                            while ($service = $stmt_services->fetch(PDO::FETCH_ASSOC)): ?>
+                                <option value="<?= $service['service_id'] ?>"><?= $service['name'] ?></option>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -415,10 +581,17 @@ if ($is_staff) {
                         <label for="staff_id">Staff</label>
                         <select class="form-control" name="staff_id">
                             <option value="">Not Assigned</option>
+<<<<<<< HEAD
                             <?php
                             $stmt_staff = $pdo->query("SELECT * FROM users WHERE role = 'staff'");
                             while ($staff = $stmt_staff->fetch(PDO::FETCH_ASSOC)): ?>
                                 <option value="<?= $staff['user_id'] ?>"><?= htmlspecialchars($staff['first_name'] . ' ' . $staff['last_name']) ?></option>
+=======
+                            <?php 
+                            $stmt_staff = $pdo->query("SELECT * FROM users WHERE role = 'staff'");
+                            while ($staff = $stmt_staff->fetch(PDO::FETCH_ASSOC)): ?>
+                                <option value="<?= $staff['user_id'] ?>"><?= $staff['first_name'] . ' ' . $staff['last_name'] ?></option>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                             <?php endwhile; ?>
                         </select>
                     </div>
@@ -432,8 +605,13 @@ if ($is_staff) {
                     </div>
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
                     <button type="button" class="btn btn-primary ce5 mb-1" data-bs-dismiss="modal">Close</button>
                     <button type="submit" name="add_appointment" class="btn btn-primary ce5 mb-1">Add Appointment</button>
+=======
+                    <button type="button" class="btn btn-primary ce5" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" name="add_appointment" class="btn btn-primary ce5">Add Appointment</button>
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
                 </div>
             </form>
         </div>
@@ -441,6 +619,7 @@ if ($is_staff) {
 </div>
 
 <script>
+<<<<<<< HEAD
     function updateStatus(selectElement, appointmentId) {
         var status = selectElement.value;
         $.post('update-status.php', {
@@ -454,6 +633,18 @@ if ($is_staff) {
             }
         }, 'json');
     }
+=======
+function updateStatus(selectElement, appointmentId) {
+    var status = selectElement.value;
+    $.post('update-status.php', { appointment_id: appointmentId, status: status }, function(response) {
+        if (response.success) {
+            alert('Appointment status updated successfully.');
+        } else {
+            alert('Error updating appointment status.');
+        }
+    }, 'json');
+}
+>>>>>>> 04935bc81071c5e9fc57decdaf1a94d54e7389f5
 </script>
 
 <?php include 'footer.php'; ?>
