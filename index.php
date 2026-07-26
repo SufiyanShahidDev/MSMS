@@ -171,15 +171,15 @@ include 'dbconnect.php';
                                 <img src="images/team/1.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">
-                                <li><a href="https://facebook.com/amalhairstyle" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/amalstylist" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="https://skype.com/amalstylist" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
-                                <li><a href="https://linkedin.com/in/amalstylist" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                <li><a href="https://pinterest.com/amalstylist" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="https://www.twitter.com/" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="https://www.skype.com/" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
                             </ul>
                         </div>
                         <div class="team-info">
-                            <h4>Azaan Khan</h4>
+                            <h4>Azan Khan</h4>
                             <p>Staff</p>
                         </div>
                     </div>
@@ -194,15 +194,15 @@ include 'dbconnect.php';
                                 <img src="images/team/2.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">
-                                <li><a href="https://facebook.com/niluka.stylist" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/nilukastylist" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="https://skype.com/nilukastylist" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
-                                <li><a href="https://linkedin.com/in/nilukastylist" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                <li><a href="https://pinterest.com/niluka.stylist" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="https://www.twitter.com/" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="https://www.skype.com/" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
                             </ul>
                         </div>
                         <div class="team-info">
-                            <h4>Taha Junaid</h4>
+                            <h4>Hamdan Khan</h4>
                             <p>Staff</p>
                         </div>
                     </div>
@@ -217,15 +217,15 @@ include 'dbconnect.php';
                                 <img src="images/team/3.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">
-                                <li><a href="https://facebook.com/sachika.makeup" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/sachikamakeup" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="https://skype.com/sachikamakeup" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
-                                <li><a href="https://linkedin.com/in/sachikamakeup" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                <li><a href="https://pinterest.com/sachikamakeup" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="https://www.twitter.com/" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="https://www.skype.com/" target="_blank"><i class="zmdi zmdi-skype"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
+                                <li><a href="https://www.pinterest.com/" target="_blank"><i class="zmdi zmdi-pinterest"></i></a></li>
                             </ul>
                         </div>
                         <div class="team-info">
-                            <h4>Muneeb Fahad</h4>
+                            <h4>Bilal Waris</h4>
                             <p>Staff</p>
                         </div>
                     </div>
@@ -364,6 +364,4 @@ include 'dbconnect.php';
     </div>
 </section>
 
-<?php 
-include 'footer.php' 
-?>
+<?php include 'footer.php' ?>

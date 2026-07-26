@@ -69,13 +69,13 @@ if (isset($_SESSION['user_id'])) {
                                 <nav class="mainmenu-nav">
                                     <ul class="main-menu">
                                         <li class="active"><a href="index.php">Home</a></li>
-                                        <li><a href="about.php">About Us</a></li>
+                                        <li><a href="about.php">About</a></li>
                                         <li><a href="services.php">Services</a></li>
                                         <li><a href="products.php">Products</a></li>
                                         <li><a href="appointment.php">Appointment</a></li>
                                         <li><a href="gallery.php">Gallery</a></li>
                                         <li><a href="blog.php">Blog</a></li>
-                                        <li><a href="contact.php">Contact Us</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
 
                                         <?php if (isset($_SESSION['user_id'])): ?>
                                             <li><a href="logout.php">Logout</a></li>
@@ -105,7 +105,7 @@ if (isset($_SESSION['user_id'])) {
                                 <li><a href="contact.php">Contact</a></li>
 
                                 <?php if (isset($_SESSION['user_id'])): ?>
-                                    <li><a href="my_account.php">My Account</a></li>
+                                    <li><a href="my-account.php">My Account</a></li>
                                     <li><a href="logout.php">Logout</a></li>
                                 <?php else: ?>
                                     <li><a href="login.php">Login</a></li>

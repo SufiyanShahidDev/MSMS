@@ -29,44 +29,104 @@
 
                     // Check if there's a search query
                     $query = isset($_GET['query']) ? trim($_GET['query']) : '';
+                    $category = isset($_GET['category']) ? trim($_GET['category']) : '';
+                    $tag = isset($_GET['tag']) ? trim($_GET['tag']) : '';
 
                     // If search query exists, modify the SQL query
                     if ($query) {
-                        $stmt_total = $pdo->prepare("SELECT COUNT(*) as total_blogs FROM blog WHERE title LIKE :query OR content LIKE :query");
-                        $stmt_total->execute(['query' => '%' . $query . '%']);
-                        $total_blogs = $stmt_total->fetch(PDO::FETCH_ASSOC)['total_blogs'];
-
-                        // Fetch blog posts matching the query with comment counts
-                        $stmt = $pdo->prepare("
-                            SELECT b.*, COUNT(c.id) as comments_count 
-                            FROM blog b
-                            LEFT JOIN comments c ON b.id = c.blog_id 
-                            WHERE b.title LIKE :query OR b.content LIKE :query 
-                            GROUP BY b.id 
-                            ORDER BY b.post_date DESC 
-                            LIMIT :limit OFFSET :offset
+                        // Count search results
+                        $stmt_total = $pdo->prepare("
+                        SELECT COUNT(*) FROM blog
+                        WHERE title LIKE :query
+                        OR content LIKE :query
                         ");
-                        $stmt->bindValue(':query', '%' . $query . '%', PDO::PARAM_STR);
-                        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-                        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+                        $stmt_total->execute([
+                            'query' => "%$query%"
+                        ]);
+                        $total_blogs = $stmt_total->fetchColumn();
+
+                        // Fetch search results
+                        $stmt = $pdo->prepare("
+                        SELECT b.*, COUNT(c.id) AS comments_count
+                        FROM blog b
+                        LEFT JOIN comments c ON b.id = c.blog_id
+                        WHERE b.title LIKE :query
+                        OR b.content LIKE :query
+                        GROUP BY b.id
+                        ORDER BY b.post_date DESC
+                        LIMIT :limit OFFSET :offset
+                        ");
+
+                        $stmt->bindValue(':query', "%$query%", PDO::PARAM_STR);
+                    } elseif ($category) {
+
+                        // Count category blogs
+                        $stmt_total = $pdo->prepare("
+                        SELECT COUNT(*) FROM blog
+                        WHERE category = :category
+                        ");
+                        $stmt_total->execute([
+                            'category' => $category
+                        ]);
+                        $total_blogs = $stmt_total->fetchColumn();
+
+                        // Fetch category blogs
+                        $stmt = $pdo->prepare("
+                        SELECT b.*, COUNT(c.id) AS comments_count
+                        FROM blog b
+                        LEFT JOIN comments c ON b.id = c.blog_id
+                        WHERE b.category = :category
+                        GROUP BY b.id
+                        ORDER BY b.post_date DESC
+                        LIMIT :limit OFFSET :offset
+                        ");
+
+                        $stmt->bindValue(':category', $category, PDO::PARAM_STR);
+                    } elseif ($tag) {
+
+                        // Count tag blogs
+                        $stmt_total = $pdo->prepare("
+                        SELECT COUNT(*) FROM blog
+                        WHERE FIND_IN_SET(:tag, tags)
+                        ");
+                        $stmt_total->execute([
+                            'tag' => $tag
+                        ]);
+                        $total_blogs = $stmt_total->fetchColumn();
+
+                        // Fetch tag blogs
+                        $stmt = $pdo->prepare("
+                        SELECT b.*, COUNT(c.id) AS comments_count
+                        FROM blog b 
+                        LEFT JOIN comments c ON b.id = c.blog_id
+                        WHERE FIND_IN_SET(:tag, b.tags)
+                        GROUP BY b.id
+                        ORDER BY b.post_date DESC
+                        LIMIT :limit OFFSET :offset
+                        ");
+
+                        $stmt->bindValue(':tag', $tag, PDO::PARAM_STR);
                     } else {
-                        // Fetch total blog count and blog posts for the current page (no query)
-                        $stmt_total = $pdo->prepare("SELECT COUNT(*) as total_blogs FROM blog");
-                        $stmt_total->execute();
-                        $total_blogs = $stmt_total->fetch(PDO::FETCH_ASSOC)['total_blogs'];
 
-                        // Fetch blog posts for the current page with comment counts
+                        // Count all blogs
+                        $stmt_total = $pdo->prepare("SELECT COUNT(*) FROM blog");
+                        $stmt_total->execute();
+                        $total_blogs = $stmt_total->fetchColumn();
+
+                        // Fetch all blogs
                         $stmt = $pdo->prepare("
-                            SELECT b.*, COUNT(c.id) as comments_count 
-                            FROM blog b
-                            LEFT JOIN comments c ON b.id = c.blog_id 
-                            GROUP BY b.id 
-                            ORDER BY b.post_date DESC 
-                            LIMIT :limit OFFSET :offset
+                         SELECT b.*, COUNT(c.id) AS comments_count
+                         FROM blog b
+                         LEFT JOIN comments c ON b.id = c.blog_id
+                         GROUP BY b.id
+                         ORDER BY b.post_date DESC
+                         LIMIT :limit OFFSET :offset
                         ");
-                        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
-                        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
                     }
+
+                    // These lines must stay below the if-else block
+                    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+                    $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 
                     $stmt->execute();
                     $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -108,7 +168,16 @@
 
                         for ($i = 1; $i <= $total_pages; $i++) {
                             $active_class = ($i == $page) ? 'class="active"' : '';
-                            $query_string = $query ? "&query=" . urlencode($query) : '';
+                            $query_string = '';
+                            if ($query) {
+                                $query_string .= '&query=' . urlencode($query);
+                            }
+                            if ($category) {
+                                $query_string .= '&category=' . urlencode($category);
+                            }
+                            if ($tag) {
+                                $query_string .= '&tag=' . urlencode($tag);
+                            }
                             echo "<li $active_class><a href='blog.php?page=$i$query_string'>$i</a></li>";
                         }
 
@@ -141,15 +210,15 @@
 
                             foreach ($recent_posts as $recent) {
                             ?>
-                            <div class="single-site-video">
-                                <div class="blog-video-img">
-                                    <a href="blog-details.php?id=<?= $recent['id'] ?>"><img src="<?= $recent['image'] ?>" alt="<?= $recent['title'] ?>"></a>
+                                <div class="single-site-video">
+                                    <div class="blog-video-img">
+                                        <a href="blog-details.php?id=<?= $recent['id'] ?>"><img src="<?= $recent['image'] ?>" alt="<?= $recent['title'] ?>"></a>
+                                    </div>
+                                    <div class="blog-video-text">
+                                        <h3><a href="blog-details.php?id=<?= $recent['id'] ?>"><?= $recent['title'] ?></a></h3>
+                                        <span><?= date('d M, Y', strtotime($recent['post_date'])) ?></span>
+                                    </div>
                                 </div>
-                                <div class="blog-video-text">
-                                    <h3><a href="blog-details.php?id=<?= $recent['id'] ?>"><?= $recent['title'] ?></a></h3>
-                                    <span><?= date('d M, Y', strtotime($recent['post_date'])) ?></span>
-                                </div>
-                            </div>
                             <?php } ?>
                         </div>
                     </div>

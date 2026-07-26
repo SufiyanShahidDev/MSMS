@@ -154,7 +154,7 @@
     text-transform: capitalize;
 }
 .footer-btm-inner p a {
-	color: #B23372;
+	color: var(--gold);
 }
 .footer-top {
   padding-top: 130px;

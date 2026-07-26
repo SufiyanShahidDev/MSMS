@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'header.php';
 include 'dbconnect.php';
 
@@ -16,66 +16,110 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Update personal information
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Update personal information
+    // Update Personal Information
     if (isset($_POST['update_info'])) {
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $telephone = $_POST['telephone'];
-        $fax = $_POST['fax'];
-
-        $stmt = $pdo->prepare("
-            UPDATE users SET 
-            first_name = :first_name, 
-            last_name = :last_name, 
-            email = :email, 
-            telephone = :telephone, 
-            fax = :fax 
-            WHERE user_id = :user_id
+        $first_name = trim($_POST['first_name']);
+        $last_name  = trim($_POST['last_name']);
+        $email      = trim($_POST['email']);
+        $telephone  = trim($_POST['telephone']);
+        $fax        = trim($_POST['fax']);
+        // Check if email already exists for another user
+        $check = $pdo->prepare("
+            SELECT user_id
+            FROM users
+            WHERE email = :email
+            AND user_id != :user_id
         ");
-        $stmt->execute([
-            'first_name' => $first_name,
-            'last_name' => $last_name,
-            'email' => $email,
-            'telephone' => $telephone,
-            'fax' => $fax,
+        $check->execute([
+            'email'   => $email,
             'user_id' => $user_id
         ]);
-        $message = 'Account information updated successfully.';
+        if ($check->rowCount() > 0) {
+            $message = "This email address is already registered. Please use another email.";
+        } else {
+            // Update user information
+            $stmt = $pdo->prepare("
+                UPDATE users SET
+                    first_name = :first_name,
+                    last_name = :last_name,
+                    email = :email,
+                    telephone = :telephone,
+                    fax = :fax
+                WHERE user_id = :user_id
+            ");
+
+            $stmt->execute([
+                'first_name' => $first_name,
+                'last_name'  => $last_name,
+                'email'      => $email,
+                'telephone'  => $telephone,
+                'fax'        => $fax,
+                'user_id'    => $user_id
+            ]);
+
+            // Reload updated user data
+            $stmt = $pdo->prepare("SELECT * FROM users WHERE user_id = :user_id");
+            $stmt->execute([
+                'user_id' => $user_id
+            ]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $message = "Account information updated successfully.";
+        }
     }
 
-    // Update password
+    // Update Password
     if (isset($_POST['change_password'])) {
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $stmt = $pdo->prepare("UPDATE users SET password = :password WHERE user_id = :user_id");
-        $stmt->execute(['password' => $password, 'user_id' => $user_id]);
-        $message = 'Password updated successfully.';
-    }
+        $password = trim($_POST['password']);
+        $confirm_password = trim($_POST['confirm_password']);
 
-    // Update address
-    if (isset($_POST['update_address'])) {
-        $address = $_POST['address'];
-        $city = $_POST['city'];
-        $country = $_POST['country'];
-        $postal_code = $_POST['postal_code'];
-
-        $stmt = $pdo->prepare("
-            UPDATE users SET 
-            address = :address, 
-            city = :city, 
-            country = :country, 
-            postal_code = :postal_code 
+        // Check if passwords match
+        if ($password != $confirm_password) {
+            $message = "Password and Confirm Password do not match.";
+        } else {
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("
+            UPDATE users
+            SET password = :password
             WHERE user_id = :user_id
         ");
+            $stmt->execute([
+                'password' => $hashedPassword,
+                'user_id'  => $user_id
+            ]);
+            $message = "Password updated successfully.";
+        }
+    }   
+    // Update Address
+    if (isset($_POST['update_address'])) {
+        $address = trim($_POST['address']);
+        $city = trim($_POST['city']);
+        $country = trim($_POST['country']);
+        $postal_code = trim($_POST['postal_code']);
+        $stmt = $pdo->prepare("
+            UPDATE users SET
+                address = :address,
+                city = :city,
+                country = :country,
+                postal_code = :postal_code
+            WHERE user_id = :user_id
+        ");
+
         $stmt->execute([
-            'address' => $address,
-            'city' => $city,
-            'country' => $country,
+            'address'     => $address,
+            'city'        => $city,
+            'country'     => $country,
             'postal_code' => $postal_code,
+            'user_id'     => $user_id
+        ]);
+
+        // Reload updated user data
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE user_id = :user_id");
+        $stmt->execute([
             'user_id' => $user_id
         ]);
-        $message = 'Address updated successfully.';
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $message = "Address updated successfully.";
     }
 }
 ?>
@@ -101,16 +145,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row">
             <div class="col-12">
                 <?php if (isset($message)): ?>
-                    <div class="alert alert-success"><?= $message ?></div>
+                    <div class="alert <?= strpos($message, 'successfully') !== false ? 'alert-success' : 'alert-danger' ?>">
+                        <?= htmlspecialchars($message) ?>
+                    </div>
                 <?php endif; ?>
                 <div class="faq-accordion">
                     <div class="panel-group pas7" id="accordion" role="tablist" aria-multiselectable="true">
-                        
+
                         <!-- Account Information -->
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a class="collapsed method" role="button" data-bs-toggle="collapse"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Edit your account information <i class="zmdi zmdi-caret-down"></i></a>
+                                    <a class="collapsed method" role="button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Edit your account information <i class="zmdi zmdi-caret-down"></i></a>
                                 </h4>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne" data-bs-parent="#accordion">
@@ -188,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                 <div class="form-group row align-items-center required">
                                                     <label class="col-md-2 control-label">Confirm Password</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="password" placeholder="Confirm Password" required>
+                                                        <input class="form-control" type="password" name="confirm_password" placeholder="Confirm Password" required>
                                                     </div>
                                                 </div>
                                             </fieldset>

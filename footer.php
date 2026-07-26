@@ -37,10 +37,10 @@
                             </div>
                             <p class="footer-pra">Providing premium men's grooming services, our salon ensures every gentleman leaves looking sharp, feeling refreshed, and full of confidence. Visit us for a truly exceptional grooming experience.</p>
                             <ul class="social-icon">
-                                <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-youtube"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-whatsapp"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank"><i class="zmdi zmdi-instagram"></i></a></li>
+                                <li><a href="https://www.youtube.com/" target="_blank"><i class="zmdi zmdi-youtube"></i></a></li>
+                                <li><a href="https://www.whatsapp.com/" target="_blank"><i class="zmdi zmdi-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             <div class="hs-footer-address">
                                 <div class="ft-single-address">
                                     <div class="footer-icon">
-                                        <a href="#"><i class="zmdi zmdi-pin"></i></a>
+                                        <a><i class="zmdi zmdi-pin"></i></a>
                                     </div>
                                     <div class="footer-address">
                                         <p>Address: Aptech Gulshan II, Karachi, Pakistan.</p>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="ft-single-address">
                                     <div class="footer-icon">
-                                        <a href="#"><i class="zmdi zmdi-email"></i></a>
+                                        <a><i class="zmdi zmdi-email"></i></a>
                                     </div>
                                     <div class="footer-address">
                                         <p><a href="mailto:info@signaturemenssalon.com">signaturemenssalon@dummy.com</a></p>
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="ft-single-address">
                                     <div class="footer-icon">
-                                        <a href="#"><i class="zmdi zmdi-phone"></i></a>
+                                        <a><i class="zmdi zmdi-phone"></i></a>
                                     </div>
                                     <div class="footer-address">
                                         <p><a href="tel:+94111777999">+94 111 777 999</a></p>

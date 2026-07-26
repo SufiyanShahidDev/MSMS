@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 17, 2026 at 01:08 PM
+-- Generation Time: Jul 25, 2026 at 09:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,9 +46,10 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`appointment_id`, `user_id`, `name`, `email`, `phone`, `service_id`, `staff_id`, `appointment_date`, `appointment_time`, `status`, `created_at`) VALUES
-(1, 16, 'Hamdan Sufyan', 'hamdan@gmail.com', '035896314', 1, 14, '2026-07-30', '10:00:00', 'Accepted', '2026-07-15 09:14:46'),
-(2, 21, 'Ali Imran', 'ali@gmail.com', '03012468920', 11, 12, '2026-07-30', '15:00:00', 'Accepted', '2026-07-15 09:15:40'),
-(3, 17, 'Shariq Shahzad', 'shariq@gmail.com', '036987412', 36, 13, '2026-07-31', '08:00:00', 'Accepted', '2026-07-15 09:16:45');
+(1, 5, 'Ahmed Farooq', 'ahmed@gmail.com', '03479098761', 1, 3, '2026-07-30', '08:00:00', 'Accepted', '2026-07-22 17:42:25'),
+(2, 6, 'Rayyan Imran', 'rayyan@gmail.com', '03214790741', 17, 2, '2026-07-29', '10:00:00', 'Accepted', '2026-07-22 17:46:10'),
+(3, 9, 'Fahad Shoaib', 'fahad@gmail.com', '03273124781', 12, 4, '2026-07-31', '14:00:00', 'Accepted', '2026-07-22 17:59:48'),
+(4, 12, 'Shariq Shahzad', 'shariq@gmail.com', '03459029087', 36, 2, '2026-07-30', '16:00:00', 'Accepted', '2026-07-22 18:05:19');
 
 -- --------------------------------------------------------
 
@@ -71,10 +72,10 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `content`, `image`, `post_date`, `category`, `tags`) VALUES
-(1, '5 Beard Care Tips Every Gentleman Should Follow', 'A well-maintained beard enhances your appearance and confidence. Learn five essential beard care tips, including proper washing, moisturizing, trimming, and using beard oil to keep your facial hair healthy, soft, and perfectly styled every day.', 'images/blog/beardcare.jpg', '2026-05-30', 'Beard Care', 'beard,beard care,grooming,tips'),
-(2, 'Why Every Man Should Use a Professional Hair Care Routine', 'Healthy hair begins with the right routine. Discover how using professional shampoo, conditioner, and nourishing products helps reduce hair damage, strengthens roots, and keeps your hairstyle looking fresh throughout the day.', 'images/blog/haircare.jpg', '2026-03-28', 'Hair Care', 'shampoo,conditioner,hair care,men'),
-(3, 'Top Men\'s Haircut Trends', 'Looking for a fresh new hairstyle? Discover the most popular men\'s haircuts of 2026, including fades, textured crops, pompadours, and modern classics. Choose a style that matches your personality and keep your look sharp all year round.', 'images/blog/haircut.png', '2026-06-01', 'Haircut', 'men\'s haircut,fade,pompadour,style'),
-(4, 'How to Choose the Right Hair Styling Product?', 'Choosing the right styling product makes all the difference. Compare hair wax, pomade, clay, and gel to find the perfect option for your hair type, desired finish, and long-lasting hold without damaging your hair.', 'images/blog/hairstyle.png', '2026-04-16', 'Hair Styling', 'hair wax,pomade,clay,styling');
+(1, '5 Beard Care Tips Every Gentleman Should Follow', 'A well-maintained beard enhances your appearance and confidence. Learn five essential beard care tips, including proper washing, moisturizing, trimming, and using beard oil to keep your facial hair healthy, soft, and perfectly styled every day.', 'images/blog/beardcare.jpg', '2026-07-25', 'Beard Care', 'beard,beard care,grooming,tips'),
+(2, 'Why Every Man Should Use a Professional Hair Care Routine', 'Healthy hair begins with the right routine. Discover how using professional shampoo, conditioner, and nourishing products helps reduce hair damage, strengthens roots, and keeps your hairstyle looking fresh throughout the day.', 'images/blog/haircare.jpg', '2026-07-25', 'Hair Care', 'shampoo,conditioner,hair care,men'),
+(3, 'Upgrade Your Style with Trending Men\'s Haircuts', 'Looking for a fresh new hairstyle? Discover the most popular men\'s haircuts of 2026, including fades, textured crops, pompadours, and modern classics. Choose a style that matches your personality and keep your look sharp all year round.', 'images/blog/haircut.png', '2026-07-25', 'Haircut', 'men\'s haircut,fade,pompadour,style'),
+(4, 'How to Choose the Right Hair Styling Product?', 'Choosing the right styling product makes all the difference. Compare hair wax, pomade, clay, and gel to find the perfect option for your hair type, desired finish, and long-lasting hold without damaging your hair.', 'images/blog/hairstyle.png', '2026-07-25', 'Hair Styling', 'hair wax,pomade,clay,styling');
 
 -- --------------------------------------------------------
 
@@ -96,10 +97,10 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `blog_id`, `author`, `email`, `content`, `created_at`) VALUES
-(9, 3, 'Hassan Ali', 'hassan@gmail.com', 'Very helpful', '2026-06-06 07:54:51'),
-(13, 1, 'Shariq Shahzad', 'shariq@gmail.com', 'Thanks for the useful beard grooming advice!', '2026-07-15 09:06:26'),
-(14, 4, 'Ali Imran', 'ali@gmail.com', 'Excellent advice for hair styling!', '2026-07-15 09:11:18'),
-(15, 2, 'Ali Imran', 'ali@gmail.com', 'Very useful hair care guide.', '2026-07-15 09:11:55');
+(1, 1, 'Rayyan Imran', 'rayyan@gmail.com', 'Very helpful advice for keeping beards soft, clean, healthy, and attractive always.', '2026-07-25 19:01:19'),
+(2, 2, 'Ali Irfan', 'ali@gmail.com', 'Excellent hair care routine for stronger, healthier, and shinier hair every day.', '2026-07-25 19:02:52'),
+(3, 3, 'Shafay Khan', 'shafay@gmail.com', 'Excellent haircut guide with trendy styles for every gentleman\'s unique personality.', '2026-07-25 19:04:15'),
+(4, 4, 'Shariq Shahzad', 'shariq@gmail.com', 'Amazing styling tips that made choosing the right hair product much easier.', '2026-07-25 19:05:17');
 
 -- --------------------------------------------------------
 
@@ -122,8 +123,10 @@ CREATE TABLE `contact_messages` (
 --
 
 INSERT INTO `contact_messages` (`id`, `name`, `email`, `phone`, `subject`, `message`, `submitted_at`) VALUES
-(2, 'shariq shahzad', 'shariq@gmail.com', '036987412', 'Feedback', 'Great Service keep it up.', '2026-06-06 08:31:05'),
-(3, 'Arham Khan', 'arham@gmail.com', '035896315', 'To appreciate', 'Wonderful Experience staff was so cooperative.', '2026-06-06 09:01:02');
+(1, 'Rayyan', 'rayyan@gmail.com', '03214790741', 'Excellent Salon Experience', 'Excellent service and professional staff. Highly recommended for quality haircuts, beard grooming, and an outstanding salon experience.', '2026-07-22 17:50:39'),
+(2, 'Shafay', 'shafay@gmail.com', '03215732134', 'Friendly and Professional Service', 'I had a wonderful experience at this salon. The staff was welcoming, skilled, and attentive to every detail. The service exceeded my expectations, and I left feeling confident and refreshed. Highly recommended!', '2026-07-22 17:54:59'),
+(3, 'Fahad', 'fahad@gmail.com', '03273124781', 'Outstanding Service', 'The staff were courteous, the service was excellent, and the overall experience exceeded my expectations. I left feeling refreshed, confident, and completely satisfied. Highly recommended!', '2026-07-22 18:01:38'),
+(4, 'Shariq', 'shariq@gmail.com', '03459029087', 'Highly Recommended Salon', 'I had an amazing experience from start to finish. The staff were professional, the atmosphere was relaxing, and the results were outstanding. I\'ll definitely be returning for my next visit!', '2026-07-22 18:07:49');
 
 -- --------------------------------------------------------
 
@@ -167,8 +170,9 @@ CREATE TABLE `newsletter_subscribers` (
 --
 
 INSERT INTO `newsletter_subscribers` (`id`, `email`, `subscribed_at`) VALUES
-(1, 'hamdan@gmail.com', '2026-06-06 10:15:34'),
-(2, 'hassan@gmail.com', '2026-06-06 10:15:48');
+(1, 'rayyan@gmail.com', '2026-07-22 17:47:53'),
+(2, 'shafay@gmail.com', '2026-07-22 17:52:52'),
+(3, 'fahad@gmail.com', '2026-07-22 17:58:14');
 
 -- --------------------------------------------------------
 
@@ -199,11 +203,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `first_name`, `last_name`, `email`, `telephone`, `address`, `city`, `postal_code`, `country`, `total`, `payment_method`, `status`, `created_at`, `updated_at`) VALUES
-(6, 18, 'Hassan', 'Ali', 'hassan@gmail.com', '032145698', 'gulshan', 'Karachi', '123456', 'Pakistan', 16000.00, 'online_payment', 'paid', '2026-06-05 08:08:17', '2026-06-05 12:50:07'),
-(7, 17, 'shariq', 'shahzad', 'shariq@gmail.com', '036987412', 'Tariq road', 'Karachi', '123456', 'Pakistan', 12800.00, 'online_payment', 'shipped', '2026-06-06 08:43:18', '2026-07-15 09:29:53'),
-(9, 16, 'Hamdan', 'Sufyan', 'hamdan@gmail.com', '035896314', 'sharfabad', 'Karachi', '123456', 'Pakistan', 6400.00, 'online_payment', 'delivered', '2026-06-06 08:54:10', '2026-07-15 09:29:34'),
-(10, 15, 'Arham', 'Khan', 'arham@gmail.com', '035896315', 'FB Area', 'Karachi', '123456', 'Pakistan', 8000.00, 'online_payment', 'pending', '2026-06-06 08:57:26', '2026-06-06 08:57:26'),
-(11, 21, 'Ali', 'Imran', 'ali@gmail.com', '03012468920', 'Nazimabad', 'Karachi', '123456', 'Pakistan', 16000.00, 'online_payment', 'pending', '2026-07-13 18:21:49', '2026-07-13 18:21:49');
+(1, 6, 'Rayyan', 'Imran', 'rayyan@gmail.com', '03214790741', 'Tariq Road', 'Karachi', '75400', 'Pakistan', 8500.00, 'online_payment', 'pending', '2026-07-22 17:46:59', '2026-07-22 17:46:59'),
+(2, 6, 'Rayyan', 'Imran', 'rayyan@gmail.com', '03214790741', 'Tariq Road', 'Karachi', '75400', 'Pakistan', 2200.00, 'online_payment', 'pending', '2026-07-22 17:47:19', '2026-07-22 17:47:19'),
+(3, 8, 'Shafay', 'Khan', 'shafay@gmail.com', '03215732134', 'Nazimabad', 'Karachi', '74600', 'Pakistan', 2200.00, 'online_payment', 'pending', '2026-07-22 17:52:18', '2026-07-22 17:52:18'),
+(4, 9, 'Fahad', 'Shoaib', 'fahad@gmail.com', '03273124781', 'Gulshan-e-Iqbal', 'Karachi', '75300', 'Pakistan', 9000.00, 'cod', 'pending', '2026-07-22 17:58:00', '2026-07-22 17:58:00'),
+(5, 12, 'Shariq', 'Shahzad', 'shariq@gmail.com', '03459029087', 'Saddar', 'Karachi', '74400', 'Pakistan', 5500.00, 'cod', 'pending', '2026-07-22 18:08:33', '2026-07-22 18:08:33'),
+(6, 12, 'Shariq', 'Shahzad', 'shariq@gmail.com', '03459029087', 'Saddar', 'Karachi', '74400', 'Pakistan', 4500.00, 'cod', 'pending', '2026-07-22 18:08:47', '2026-07-22 18:08:47');
 
 -- --------------------------------------------------------
 
@@ -226,11 +231,12 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `product_name`, `quantity`, `price`) VALUES
-(6, 6, 1, 'Hair Shampoo', 1, 16000.00),
-(7, 7, 2, 'Beard Trimmer', 1, 12800.00),
-(9, 9, 6, 'Beard Wax', 1, 6400.00),
-(10, 10, 9, 'Beard Oil', 1, 8000.00),
-(11, 11, 1, 'Hair Shampoo', 1, 16000.00);
+(1, 1, 2, 'Beard Trimmer', 1, 8500.00),
+(2, 2, 13, 'Beard Comb', 1, 2200.00),
+(3, 3, 12, 'Face Scrub', 1, 2200.00),
+(4, 4, 8, 'Hair Mask', 1, 9000.00),
+(5, 5, 9, 'Beard Oil', 1, 5500.00),
+(6, 6, 15, 'Hair Gel', 1, 4500.00);
 
 -- --------------------------------------------------------
 
@@ -257,8 +263,8 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`product_id`, `product_name`, `description`, `category`, `price`, `image_url`, `stock_status`, `created_at`, `updated_at`) VALUES
 (1, 'Hair Shampoo', 'A nourishing shampoo for all hair types.', 'Hair Care', 4300.00, 'images/shop/1.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:15:49'),
 (2, 'Beard Trimmer', 'Precision beard trimmer for all styles.', 'Beard Care', 8500.00, 'images/shop/2.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:16:02'),
-(3, 'Shaving Cream', 'Rich shaving cream for a smooth, comfortable shave.', 'Beard Care', 2500.00, 'images/shop/3.png', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 18:53:00'),
-(4, 'Face Wash', 'Deep-cleansing face wash for daily use.', 'Skincare', 3500.00, 'images/shop/4.png', 'out_of_stock', '2026-05-19 10:36:34', '2026-07-14 18:35:50'),
+(3, 'Shaving Cream', 'Rich shaving cream for a smooth, comfortable shave.', 'Beard Care', 2500.00, 'images/shop/3.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-22 11:06:49'),
+(4, 'Face Wash', 'Deep-cleansing face wash for daily use.', 'Skincare', 3500.00, 'images/shop/4.jpg', 'out_of_stock', '2026-05-19 10:36:34', '2026-07-22 11:07:01'),
 (5, 'Hair Spray', 'Volumizing hair spray with extra hold.', 'Hair Care', 3400.00, 'images/shop/5.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:16:17'),
 (6, 'Beard Wax', 'Beard wax to style and shape facial hair.', 'Beard Care', 5500.00, 'images/shop/6.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:16:32'),
 (7, 'Hair Serum', 'Shine-enhancing serum for smooth hair.', 'Hair Care', 8500.00, 'images/shop/7.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:16:43'),
@@ -266,7 +272,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `description`, `category`,
 (9, 'Beard Oil', 'Nourishing beard oil to soften and condition.', 'Beard Care', 5500.00, 'images/shop/9.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:17:16'),
 (10, 'Hair Shining Oil', 'Adds shine and smoothness to hair.', 'Hair Care', 7800.00, 'images/shop/10.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:17:29'),
 (11, 'Electric Shaver', 'High-performance electric shaver for clean cuts.', 'Beard Tools', 14500.00, 'images/shop/11.jpg', 'out_of_stock', '2026-05-19 10:36:34', '2026-07-14 19:17:49'),
-(12, 'Face Scrub', 'Exfoliating scrub that removes dead skin cells.', 'Skincare', 2200.00, 'images/shop/12.png', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:03:38'),
+(12, 'Face Scrub', 'Exfoliating scrub that removes dead skin cells.', 'Skincare', 2200.00, 'images/shop/12.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-22 11:07:13'),
 (13, 'Beard Comb', 'Wooden comb designed specifically for beards.', 'Beard Tools', 2200.00, 'images/shop/13.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:18:01'),
 (14, 'Hair Clippers', 'Professional hair clippers for salon-quality cuts.', 'Hair Tools', 12500.00, 'images/shop/14.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:18:14'),
 (15, 'Hair Gel', 'Strong hold hair gel for all-day control.', 'Hair Care', 4500.00, 'images/shop/15.jpg', 'in_stock', '2026-05-19 10:36:34', '2026-07-14 19:18:23');
@@ -360,44 +366,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password`, `telephone`, `fax`, `address`, `city`, `country`, `postal_code`, `role`, `specialization`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'User1', 'admin1@sufiyan.dev', '$2y$10$Ku1hfGFdKQ.k8soLQVhvduFjzvvaX7gWZW7akVXEukCnOv.TLgMP6', '032021127', NULL, NULL, NULL, NULL, NULL, 'admin', NULL, '2026-05-19 10:36:33', '2026-06-06 08:28:55'),
-(12, 'Azan', 'Khan', 'roghani@gmail.com', '$2y$10$GdnwtpDCkQZnzhlRU59Odelp6Y9UeOR2WtVclnyloDqpFP7oPMxM6', '039656987', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-06-04 11:43:32', '2026-06-04 11:44:34'),
-(13, 'Taha', 'Junaid', 'taha@gmail.com', '$2y$10$eE71jZ2u/tEuKSig3RoSk.XD.uhnEz4X1CjGbdsms9DdjO9zaCnhi', '036985214', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-06-04 11:45:46', '2026-07-15 08:56:48'),
-(14, 'Muneeb', 'Fahad', 'muneeb@gmail.com', '$2y$10$QqFce/aYC2U993ituMRVeu5BFekK7jFvTjaBK2BzymkdodofywLr2', '032587415', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-06-04 11:46:32', '2026-07-15 08:55:57'),
-(15, 'Arham', 'Khan', 'arham@gmail.com', '$2y$10$5DOmXZOaJMfD74nGm3FV/ONiKTe1CqAw6CNgG5oyEHe691dlovPjy', '035896315', NULL, 'FB Area', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-06-04 11:47:15', '2026-06-06 08:56:16'),
-(16, 'Hamdan', 'Sufyan', 'hamdan@gmail.com', '$2y$10$QJ1C8KJ5qD8tQb8gLaMkDuOALA.sBZwY3cqL/hHHp2EcZfPQhuulq', '035896314', NULL, 'sharfabad', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-06-04 11:47:52', '2026-06-06 08:52:18'),
-(17, 'Shariq', 'Shahzad', 'shariq@gmail.com', '$2y$10$l4VItGJecURsKLMDn87M0ew/baBO0s5hdkVQuabm48KGDxWluwNse', '036987412', '', 'Tariq road', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-06-04 11:48:39', '2026-07-15 09:07:53'),
-(18, 'Hassan', 'Ali', 'hassan@gmail.com', '$2y$10$HnAyGzmQ8bDebFXLd0JYh.TGrCMnNrrJpXiJaXfXGWNM2Ad9aIutS', '032145698', NULL, 'gulshan', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-06-04 11:50:08', '2026-06-05 08:08:08'),
-(19, 'Ahmed', 'Khan', 'ahmed@gmail.com', '$2y$10$3dgBUf1Sueaao3OiXFst/.nuU9eNSVKCv9UVHTXCbMQAHtmqii6me', '032654198', NULL, 'Bahadurabad', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-06-04 11:51:05', '2026-07-12 19:39:37'),
-(20, 'Bilal', 'Waris', 'admin2@gmail.com', '$2y$10$OCfA3QmASY67C06DWYPFL.2qedeDnSQLUgvnZ3zh91ADSUXWE6BU.', '03012342324', '', NULL, NULL, NULL, NULL, 'admin', NULL, '2026-07-08 19:05:23', '2026-07-08 19:07:15'),
-(21, 'Ali', 'Imran', 'ali@gmail.com', '$2y$10$Xf2kaMWUhOtDYeAyGXAq8uzPLVhtYK3AUIHQrsO387jmHBxp57wXS', '03012468920', NULL, 'Nazimabad', 'Karachi', 'Pakistan', '123456', 'user', NULL, '2026-07-13 18:19:00', '2026-07-15 08:57:36');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_otp`
---
-
-CREATE TABLE `user_otp` (
-  `user_otp_id` int(11) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `telephone` varchar(15) NOT NULL,
-  `otp_code` int(11) NOT NULL,
-  `otp_expiry` datetime NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user_otp`
---
-
-INSERT INTO `user_otp` (`user_otp_id`, `first_name`, `last_name`, `email`, `password`, `telephone`, `otp_code`, `otp_expiry`, `created_at`) VALUES
-(1, 'Sufyan', 'Shahid', 'sufyan@gmail.com', '$2y$10$xKp94I5Mwomg52O2Fud.0uTHcvEYVpXKCR.CtSk8kR/M7byNdUO3C', '123456', 738853, '2026-05-23 12:43:49', '2026-05-23 10:33:49'),
-(2, 'Sufyan', 'Shahid', 'abc@gmail.com', '$2y$10$p/8UGxRJZF0yqYKsx6fFqew98PYQlk2iHLIYS9HhSjVHHZm.FKxea', '123456', 855136, '2026-05-23 13:26:53', '2026-05-23 11:16:53'),
-(3, 'Sufyan', 'Shahid', '123@gmail.com', '$2y$10$BSiuw/F44b/6DgkV3cHAfOhwGbEnU63ewT1xKcdPkRJM6EV2qoGmK', '123456', 353506, '2026-05-23 13:40:58', '2026-05-23 11:18:30');
+(1, 'Admin', 'User1', 'sufiyanshahiddev@gmail.com', '$2y$10$.MoAxKtKImVbhoHpXE.lQ.t78YXSL/99Cl6Y0frB.8gOw2ucGQlSS', '03214789246', '', NULL, NULL, NULL, NULL, 'admin', NULL, '2026-07-22 10:15:14', '2026-07-22 10:53:03'),
+(2, 'Azan', 'Khan', 'roghani@gmail.com', '$2y$10$52Ul.YTsgfArPcOC8RTDr.gVT.9sictSTSwCInYM70oTF4.2iAZvW', '03457890246', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-07-22 10:17:48', '2026-07-22 10:17:48'),
+(3, 'Hamdan', 'Khan', 'hamdan@gmail.com', '$2y$10$uXaPFE3xODHU4ri0D1Efbe3HlY6zegYh9A.sUqdG4SezfgLli3I96', '03213709876', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-07-22 10:18:41', '2026-07-22 10:18:41'),
+(4, 'Bilal', 'Waris', 'bilal@gmail.com', '$2y$10$oxZtiQfQDocJUBy7o.BlCeLsh1DPv3/t5hF1s/l.mH15wcEBn5i.K', '03279076893', NULL, NULL, NULL, NULL, NULL, 'staff', NULL, '2026-07-22 10:19:18', '2026-07-22 10:19:18'),
+(5, 'Ahmed', 'Farooq', 'ahmed@gmail.com', '$2y$10$bV4H/mIQODdgI55AzR2DYuREqGXrVmLgQ..zCCHlzahiDP7kzs2Xa', '03479098761', NULL, 'Bahadurabad', 'Karachi', 'Pakistan', '74200', 'user', NULL, '2026-07-22 10:20:06', '2026-07-22 11:42:54'),
+(6, 'Rayyan', 'Imran', 'rayyan@gmail.com', '$2y$10$3JaVqFpRbKWwj/NngOJC5eQsQgBu67Urezk8793CghQViDbKuDFvi', '03214790741', NULL, 'Tariq Road', 'Karachi', 'Pakistan', '75400', 'user', NULL, '2026-07-22 10:21:03', '2026-07-22 15:32:17'),
+(7, 'Ali', 'Irfan', 'ali@gmail.com', '$2y$10$LiYe6aUXBfYaBxQFYkmTUOMkAZBye62InsP0geU2nEfGBEv1g99AW', '03379014908', NULL, 'DHA Phase 2', 'Karachi', 'Pakistan', '75500', 'user', NULL, '2026-07-22 10:21:49', '2026-07-22 15:33:25'),
+(8, 'Shafay', 'Khan', 'shafay@gmail.com', '$2y$10$/BOO8/.5SXTlhDzH5KsyKe1KydDsyAVb5oOt8rE7LeLXSQQtq4FnW', '03215732134', '', 'Nazimabad', 'Karachi', 'Pakistan', '74600', 'user', NULL, '2026-07-22 10:22:24', '2026-07-22 17:51:41'),
+(9, 'Fahad', 'Shoaib', 'fahad@gmail.com', '$2y$10$4VKoHPVXCjLfV92MVPqTbOWwDb2XMEircgnyEaMBtkTVes7.qGtlm', '03273124781', NULL, 'Gulshan-e-Iqbal', 'Karachi', 'Pakistan', '75300', 'user', NULL, '2026-07-22 10:23:32', '2026-07-22 15:37:08'),
+(10, 'Yousuf', 'Ali', 'yousuf@gmail.com', '$2y$10$1KPscBZPoSnJroahrNVSVOHTC558rxD1yRDlzaXqipV.LfBClvWeO', '03903782156', NULL, 'Gulistan-e-Jauhar', 'Karachi', 'Pakistan', '75290', 'user', NULL, '2026-07-22 10:24:40', '2026-07-22 15:42:23'),
+(11, 'Faizan', 'Younus', 'faizan@gmail.com', '$2y$10$WhQvC2Y.6knIOBwaeMXpeu1ohMG35bAJHNLyRlnGl3pPBkK8Pp8aK', '03879347126', NULL, 'Dhoraji', 'Karachi', 'Pakistan', '74800', 'user', NULL, '2026-07-22 10:26:38', '2026-07-22 15:44:05'),
+(12, 'Shariq', 'Shahzad', 'shariq@gmail.com', '$2y$10$uMTfeiyWqxU24IYwmCHBneTrISLpLI8zqG/6zhd189u9cLi3adZ7O', '03459029087', NULL, 'Saddar', 'Karachi', 'Pakistan', '74400', 'user', NULL, '2026-07-22 10:27:26', '2026-07-22 15:45:29');
 
 -- --------------------------------------------------------
 
@@ -417,10 +397,10 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`wishlist_id`, `user_id`, `product_id`, `date_added`) VALUES
-(1, 17, 2, '2026-06-06 08:42:17'),
-(2, 19, 3, '2026-06-06 08:47:24'),
-(3, 16, 5, '2026-06-06 08:53:32'),
-(4, 15, 11, '2026-06-06 08:56:53');
+(1, 6, 4, '2026-07-22 17:47:37'),
+(2, 8, 5, '2026-07-22 17:51:54'),
+(3, 9, 1, '2026-07-22 17:58:07'),
+(4, 12, 2, '2026-07-22 18:09:46');
 
 --
 -- Indexes for dumped tables
@@ -500,13 +480,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `user_otp`
---
-ALTER TABLE `user_otp`
-  ADD PRIMARY KEY (`user_otp_id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- Indexes for table `wishlist`
 --
 ALTER TABLE `wishlist`
@@ -522,7 +495,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `blog`
@@ -534,13 +507,13 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
 --
 ALTER TABLE `contact_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -552,19 +525,19 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `newsletter_subscribers`
 --
 ALTER TABLE `newsletter_subscribers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -582,13 +555,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `user_otp`
---
-ALTER TABLE `user_otp`
-  MODIFY `user_otp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

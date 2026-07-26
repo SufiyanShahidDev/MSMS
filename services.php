@@ -105,7 +105,6 @@ $services = $stmt_services->fetchAll(PDO::FETCH_ASSOC);
 
         .single-service-area {
             padding: 22px 18px;
-            border-radius: 14px;
         }
 
         .ser-vice-tit {

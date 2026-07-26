@@ -42,9 +42,6 @@
                         <p>Our skilled barbers and grooming specialists are committed to delivering personalized services that suit your lifestyle and personality. From precision haircuts and sharp fades to expert beard styling and premium hair care, every service is designed to help you look and feel your best.</p>
                         <p>With years of experience, exceptional craftsmanship, and a dedication to customer satisfaction, we continue to set the standard for modern men's grooming, combining timeless techniques with the latest trends.</p>
                     </div>
-                    <!-- <div class="story-writter">
-                        <img src="images/story-img/2.png" alt="Founder Signature">
-                    </div> -->
                 </div>
             </div>
         </div>
