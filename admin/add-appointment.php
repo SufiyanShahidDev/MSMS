@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'appointment_time' => $appointment_time
     ]);
 
-    header('Location: ./manage-appointments.php');
+    header('Location: manage-appointments.php');
     exit;
 }
 ?>
