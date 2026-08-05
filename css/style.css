@@ -375,6 +375,22 @@ h4.ser-vice-tit {
     z-index: 3;
 }
 
+.staff-img-1 img {
+    position: relative;
+    top: 31px;
+    left: 8px;
+}
+
+.staff-img-2 img {
+    position: relative;
+    top: 15px;
+}
+
+.staff-img-3 img {
+    position: relative;
+    top: 22px;
+}
+
 .team-thumb::before {
     background: transparent none repeat scroll 0 0;
     border: 2px solid var(--gold);
@@ -1807,6 +1823,7 @@ h3.contact-title {
     background: none repeat scroll 0 0 #c9a227;
     color: #fff;
 }
+
 /*--------------------- Shopping cart --------------------*/
 .like h2 {
     font-size: 20px;

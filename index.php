@@ -167,7 +167,7 @@ include 'dbconnect.php';
                 <div class="hs-single-team">
                     <div class="single-team-inner">
                         <div class="single-team-content">
-                            <div class="team-thumb">
+                            <div class="team-thumb staff-img-1">
                                 <img src="images/team/1.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">
@@ -190,7 +190,7 @@ include 'dbconnect.php';
                 <div class="hs-single-team">
                     <div class="single-team-inner">
                         <div class="single-team-content">
-                            <div class="team-thumb">
+                            <div class="team-thumb staff-img-2">
                                 <img src="images/team/2.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">
@@ -213,7 +213,7 @@ include 'dbconnect.php';
                 <div class="hs-single-team">
                     <div class="single-team-inner">
                         <div class="single-team-content">
-                            <div class="team-thumb">
+                            <div class="team-thumb staff-img-3">
                                 <img src="images/team/3.png" alt="team images">
                             </div>
                             <ul class="team-social-icon">

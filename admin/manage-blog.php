@@ -299,5 +299,3 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         alert('Blog post added, but failed to send notification email.');
     }
 </script>
-
-<?php include 'footer.php'; ?>
